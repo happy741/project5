@@ -71,29 +71,101 @@
 </div>
     </header>
 
+<div id="cate">
+    <h1>Featured Categories</h1>
+    <div class="cate_box">
+        <div class="cate1"></div>
+        <div class="cate1"></div>
+        <div class="cate1"></div>
+        <div class="cate1"></div>
+    </div>
+</div>
 
-    <div id="cate">
-        <h1>Featured Categories</h1>
-        <div class="cate_box">
-            <div class="cate1"></div>
-            <div class="cate1"></div>
-            <div class="cate1"></div>
-            <div class="cate1"></div>
+<div class="books1">
+    <h1>Bestselling Books</h1>
+    <div id="book_box">
+        <div class="books">
+            <div class="books_img">
+
+            </div>
+
+            <div class="books_text">
+
+            </div>
+
+            <div class="books_text2">
+
+            </div>
+
         </div>
+
+
+        <div class="books">
+            <div class="books_img">
+
+            </div>
+
+            <div class="books_text">
+
+            </div>
+
+            <div class="books_text2">
+
+            </div>
+
+        </div>
+
+
+        <div class="books">
+            <div class="books_img">
+
+            </div>
+
+            <div class="books_text">
+
+            </div>
+
+            <div class="books_text2">
+
+            </div>
+
+        </div>
+
+
+        <div class="books">
+            <div class="books_img">
+
+            </div>
+
+            <div class="books_text">
+
+            </div>
+
+            <div class="books_text2">
+
+            </div>
+
+        </div>
+
+
+        <div class="books">
+            <div class="books_img">
+
+            </div>
+
+            <div class="books_text">
+
+            </div>
+
+            <div class="books_text2">
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="books1">
-        <h1>Bestselling Books</h1>
-
-        <div id="book_box">
-            <div class="books"></div>
-            <div class="books"></div>
-            <div class="books"></div>
-            <div class="books"></div>
-            <div class="books"></div>
-        </div>
-
-    </div>
+</div>
 
     <article>
 <h1>Featured Books</h1>
@@ -131,14 +203,15 @@
 
         <div class="deal_slide">
             <div id="prev"></div>
+            <div class="deal_slide_box_box">
             <div class="deal_slide_box">
-                <div class="deal_box"></div>
-                <div class="deal_box"></div>
-                <div class="deal_box"></div>
-                <div class="deal_box"></div>
-                <div class="deal_box"></div>
+                <div class="deal_box">11</div>
+                <div class="deal_box">2</div>
+                <div class="deal_box">3</div>
+                <div class="deal_box">4</div>
+                <div class="deal_box">5</div>
             </div>
-
+        </div>
             <div id="next"></div>
 
         </div>
@@ -242,27 +315,46 @@ headers:{Authorization:"KakaoAK 7b2300fc6315bb65035d1a3c7b49b161"}
 
 .done(function( msg ) {
 
-var book=document.getElementsByClassName('books');
+var book=document.getElementsByClassName('books_img');
 
 for(var i=0; i<book.length; i++) {
     
    
-    $(".books").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
-                    $(".books").eq(i).append("<h3>" + '<a href="sub_book13.html">' + msg.documents[i].title + "</a>" + "</h3>");
-                    $(".books").eq(i).append("<h6>" + msg.documents[i].authors + "</h6>");
+    $(".books_img").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
+                   
+                  
 
 
 
                         var str = msg.documents[i].contents;
                     var str2 = str.substring(0, 60);
-
-                    $(".box").eq(i).append("<p>" + '<a href="sub_book13.html">' + str2 + "</a>" + "</p>");
-                    $(".box").eq(i).append('<a href="#" class="btn">' + "click" + "</a>");
+                    $(".books_text").eq(i).append("<h6>" + msg.documents[i].authors + "</h6>");
+                    $(".books_text").eq(i).append("<h3>" + '<a href="sub_book13.html">' + msg.documents[i].title + "</a>" + "</h3>");
+                    $(".books_text").eq(i).append("<p>" + '<a href="sub_book13.html">' + str2 + "</a>" + "</p>");
+                    $(".books_text").eq(i).append('<a href="#" class="btn">' + "click" + "</a>");
 
                     }
 
 });
 
+
+$(function(){
+    $('#prev').click(function(){
+        $('.deal_box').eq(0).prependTo('.deal_slide_box');
+        $('.deal_slide_box').css('margin-left',-1000);
+        $('.deal_slide_box').stop().animate({marginLeft:0},800);
+        
+    });
+
+    $('#next').click(function(){
+         $('.deal_slide_box').stop().animate({marginLeft:-1000},800,function(){
+        $('.deal_box').eq(4).appendTo('.deal_slide_box');
+        $('.deal_slide_box').css({marginLeft:0});
+    });
+    });
+
+
+});
     </script>
 
 
