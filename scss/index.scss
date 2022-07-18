@@ -6,6 +6,7 @@ a{text-decoration: non;}
 $w:1300px;
 $m:0 auto;
 $h:100%;
+$c:pointer;
 
 @mixin flex{
     display: flex;
@@ -45,6 +46,10 @@ header{
 }
 
 
+#nav1_box{
+    width:100%;
+    border:1px solid #ddd;
+}
 
 #nav1{
     width:$w;
@@ -52,7 +57,7 @@ header{
     margin:$m;
     @include flex2;
     background-color: white;
-    border-bottom:1px solid #333;
+
 
 #help{
     width:400px;
@@ -67,9 +72,9 @@ header{
 }
 
 #my{
-    width:240px;
+    width:170px;
     height:$h;
-    background-color: cadetblue;
+
     @include flex2;
 
 }
@@ -77,11 +82,18 @@ header{
 .icon{
     width:30px;
     height: 30px;
-    background-color: blueviolet;
 
+    @include flex;
     }
+    cursor: $c;
 
 }
+
+#nav2_box{
+    width:100%;
+    border-bottom: 1px solid #ddd;;
+}
+
 
 #nav2{
     width:$w;
@@ -89,7 +101,7 @@ header{
     margin:$m;
     @include flex3;
     background-color: white;
-    border-bottom:1px solid #333;
+
 
 
 .logo {
@@ -106,19 +118,26 @@ header{
  
     }
     
-    #search{
-        width:300px;
-        height:40px;
-        background-color: darkgoldenrod;
-        @include flex2;
-        
-        #search_icon{width:15%;
-        height:$h;
-    background-color: darkred;}
+        #search {
+            width: 300px;
+            height: 40px;
+            background-color: #f6f5f3;
+            @include flex3;
+    
+            #search_icon {
+                width: 8%;
+                height: 20px;
+                cursor:$c;
+                @include flex;
 
-        input{width:80%;
-            height:30px;
+            }
+  
+
+        input{width:75%;
+            height:25px;
             font-size: 17px;
+            border:none;
+            background-color: #f6f5f3;
         }
     }
 }
@@ -176,7 +195,10 @@ header{
             border: {
                 right:$border;
                 bottom:$border;
+               
             }
+            @include flex
+            {flex-direction: column;}
         }
     }
 }
@@ -274,6 +296,108 @@ article{
     height:30px;
 background-color: blueviolet;}
 }
+
+.new{
+    width:$w;
+    height:850px;
+   
+    margin:$m;
+
+
+    .new_text{
+        width:100%;
+        height:70px;
+  
+        @include flex2;
+
+        .text_box{
+            width:450px;
+            height:$h;
+          
+            @include flex2;
+        }
+    }
+
+    .new_book_box{
+        width:100%;
+        height:750px;
+     
+        @include flex{
+            flex-wrap: wrap;
+            flex-direction: column;
+        };
+
+        .new_book1{
+            width:30%;
+            height:$h;
+            background-color: deepskyblue;
+         
+        }
+        .new_book2{width:17%;
+                height:50%;
+            background-color: rgb(124, 151, 151);}
+    }
+
+}
+
+.bio{
+    width:$w;
+    height:550px;
+   
+    margin:$m;
+    @include flex{
+        flex-direction: column;
+    }
+
+    h1{width:100%;
+    margin-bottom: 3%;}
+
+    .bio_slide{
+        width:100%;
+        height:400px;
+        background-color: darkblue;
+    }
+    .button{
+        width:200px;
+        height:50px;
+    
+        @include flex2;
+
+        .circle1{
+            width:30px;
+            height:30px;
+            background-color: rgb(68, 64, 0);
+        }
+    }
+}
+
+.favorite{
+    width:$w;
+    height:400px;
+    background-color: cadetblue;
+    margin:$m;
+.favo_text{
+    @include flex2;
+    margin-bottom:3%;
+}
+
+    .favo_box{
+        width:100%;
+        height:200px;
+        background-color: burlywood;
+        @include flex2;
+
+        .favo{
+            width:18%;
+            height:200px;
+            background-color: crimson;
+        }
+    }
+}
+
+
+
+
 
 // @mixin flex4($flex,$justify,$align,$direction...)
 // {

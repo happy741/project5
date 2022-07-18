@@ -18,6 +18,11 @@ header {
   height: 700px;
 }
 
+#nav1_box {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
 #nav1 {
   width: 1300px;
   height: 40px;
@@ -26,7 +31,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  border-bottom: 1px solid #333;
+  cursor: pointer;
 }
 #nav1 #help {
   width: 400px;
@@ -43,9 +48,8 @@ header {
   align-items: center;
 }
 #nav1 #my {
-  width: 240px;
+  width: 170px;
   height: 100%;
-  background-color: cadetblue;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,7 +57,14 @@ header {
 #nav1 .icon {
   width: 30px;
   height: 30px;
-  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav2_box {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
 }
 
 #nav2 {
@@ -64,7 +75,6 @@ header {
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  border-bottom: 1px solid #333;
 }
 #nav2 .logo {
   width: 250px;
@@ -84,20 +94,25 @@ header {
 #nav2 #search {
   width: 300px;
   height: 40px;
-  background-color: darkgoldenrod;
+  background-color: #f6f5f3;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 #nav2 #search #search_icon {
-  width: 15%;
-  height: 100%;
-  background-color: darkred;
+  width: 8%;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #nav2 #search input {
-  width: 80%;
-  height: 30px;
+  width: 75%;
+  height: 25px;
   font-size: 17px;
+  border: none;
+  background-color: #f6f5f3;
 }
 
 .main_slide {
@@ -154,6 +169,10 @@ header {
   height: 300px;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 article {
@@ -255,4 +274,100 @@ article h1 {
   width: 30px;
   height: 30px;
   background-color: blueviolet;
+}
+
+.new {
+  width: 1300px;
+  height: 850px;
+  margin: 0 auto;
+}
+.new .new_text {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.new .new_text .text_box {
+  width: 450px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.new .new_book_box {
+  width: 100%;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.new .new_book_box .new_book1 {
+  width: 30%;
+  height: 100%;
+  background-color: deepskyblue;
+}
+.new .new_book_box .new_book2 {
+  width: 17%;
+  height: 50%;
+  background-color: rgb(124, 151, 151);
+}
+
+.bio {
+  width: 1300px;
+  height: 550px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bio h1 {
+  width: 100%;
+  margin-bottom: 3%;
+}
+.bio .bio_slide {
+  width: 100%;
+  height: 400px;
+  background-color: darkblue;
+}
+.bio .button {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bio .button .circle1 {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(68, 64, 0);
+}
+
+.favorite {
+  width: 1300px;
+  height: 400px;
+  background-color: cadetblue;
+  margin: 0 auto;
+}
+.favorite .favo_text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3%;
+}
+.favorite .favo_box {
+  width: 100%;
+  height: 200px;
+  background-color: burlywood;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.favorite .favo_box .favo {
+  width: 18%;
+  height: 200px;
+  background-color: crimson;
 }

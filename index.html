@@ -7,9 +7,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/font.css">
+
+    
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
+        <div id="nav1_box">
         <div id="nav1">
             <div id="help">
                 <div class="help1">
@@ -21,15 +25,15 @@
             </div>
 
             <div id="my">
-                <div class="icon"></div>
-                <div class="icon"></div>
-                <div class="icon"></div>
-                <div class="icon"></div>
-                <div class="icon"></div>
+                <div class="icon"><img src="img/my1.png" alt="#"></div>
+                <div class="icon"><img src="img/my2.png" alt="#"></div>
+                <div class="icon"><img src="img/my3.png" alt="#"></div>
+                <div class="icon"><img src="img/my4.png" alt="#"></div>
             </div>
 
         </div>
-
+    </div>
+    <div id="nav2_box">
         <div id="nav2">
           <div class="logo">
             <img src="img/logo.png" alt="#">
@@ -47,8 +51,10 @@
             </ul>
 
             <div id="search">
-                <div id="search_icon"></div>
-                <input type="text">
+                <div id="search_icon">
+                    <img src="img/de.png" alt="">
+                </div>
+                <input type="text" placeholder="Search..." >
             </div>
         </div>
 
@@ -62,7 +68,7 @@
         </div>
 
 
-
+</div>
     </header>
 
 
@@ -146,11 +152,71 @@
     
     </div>
 
-    <div class="new"></div>
+    <div class="new">
+        <div class="new_text">
+            <h1>New Releases</h1>
+    
+            <div class="text_box">
+                <p>History</p>
+                <p>Sicence & Math</p>
+                <p>Romance</p>
+                <p>Travel</p>
+            </div>
+    
+        </div>
+    
+        <div class="new_book_box">
+            <div class="new_book1"></div>
+    
+            <div class="new_book2"></div>
+            <div class="new_book2"></div>
+            <div class="new_book2"></div>
+            <div class="new_book2"></div>
+            <div class="new_book2"></div>
+            <div class="new_book2"></div>
+            <div class="new_book2"></div>
+            <div class="new_book2"></div>
+        </div>
+    </div>
 
-    <div class="bio"></div>
+    <div class="bio">
+        <h1>Travel Books</h1>
+        <div class="bio_slide">
+            <div class="bio_slide_box">
+                <div class="bio1"></div>
+                <div class="bio1"></div>
+                <div class="bio1"></div>
+                <div class="bio1"></div>
+                <div class="bio1"></div>
+            </div>
 
-    <div class="favorite"></div>
+       
+        </div>
+
+        <div class="button">
+            <div class="circle1"></div>
+            <div class="circle1"></div>
+            <div class="circle1"></div>
+            <div class="circle1"></div>
+            <div class="circle1"></div>
+        </div>
+
+    </div>
+
+    <div class="favorite">
+
+        <div class="favo_text">
+        <h1>Favorite Authors</h1>
+        <p>View More ></p>
+    </div>
+        <div class="favo_box">
+            <div class="favo"></div>
+            <div class="favo"></div>
+            <div class="favo"></div>
+            <div class="favo"></div>
+            <div class="favo"></div>
+        </div>
+    </div>
 
     <div class="join"></div>
 
@@ -159,6 +225,45 @@
 
     </footer>
 
+
+    <script>
+
+
+$.ajax({
+
+method: "GET",
+
+url: "https://dapi.kakao.com/v3/search/book?target=title",
+
+data: {query:'미움받을 용기' },
+headers:{Authorization:"KakaoAK 7b2300fc6315bb65035d1a3c7b49b161"}
+
+})
+
+.done(function( msg ) {
+
+var book=document.getElementsByClassName('books');
+
+for(var i=0; i<book.length; i++) {
+    
+   
+    $(".books").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
+                    $(".books").eq(i).append("<h3>" + '<a href="sub_book13.html">' + msg.documents[i].title + "</a>" + "</h3>");
+                    $(".books").eq(i).append("<h6>" + msg.documents[i].authors + "</h6>");
+
+
+
+                        var str = msg.documents[i].contents;
+                    var str2 = str.substring(0, 60);
+
+                    $(".box").eq(i).append("<p>" + '<a href="sub_book13.html">' + str2 + "</a>" + "</p>");
+                    $(".box").eq(i).append('<a href="#" class="btn">' + "click" + "</a>");
+
+                    }
+
+});
+
+    </script>
 
 
     
