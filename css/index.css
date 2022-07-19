@@ -8,8 +8,8 @@ ul {
 }
 
 a {
-  -webkit-text-decoration: non;
-          text-decoration: non;
+  text-decoration: none;
+  color: #333;
 }
 
 header {
@@ -192,15 +192,85 @@ header {
   margin-top: 5%;
   margin-left: 5%;
 }
-.main_slide .slide_box .slide .slide2:nth-of-type(2) {
+.main_slide .slide_box .slide:nth-of-type(2) {
   position: relative;
 }
-.main_slide .slide_box .slide .slide2:nth-of-type(2) img:nth-child(2) {
+.main_slide .slide_box .slide:nth-of-type(2) img:nth-child(2) {
   position: absolute;
   top: 50px;
   right: 180px;
   -webkit-animation: slide2 1s infinite alternate;
           animation: slide2 1s infinite alternate;
+}
+.main_slide .slide_box .slide:nth-of-type(3) {
+  position: relative;
+}
+.main_slide .slide_box .slide:nth-of-type(3) img:nth-child(1) {
+  position: absolute;
+  z-index: 5;
+}
+.main_slide .slide_box .slide:nth-of-type(3) img:nth-child(2) {
+  position: absolute;
+  top: 70px;
+  right: 180px;
+  -webkit-animation: slide3 15s linear infinite backwards;
+          animation: slide3 15s linear infinite backwards;
+}
+.main_slide .slide_box .slide:nth-of-type(3) img:nth-child(3) {
+  position: absolute;
+  top: 10px;
+  right: 100px;
+  -webkit-animation: slide3 17s linear infinite 3s backwards;
+          animation: slide3 17s linear infinite 3s backwards;
+}
+.main_slide .slide_box .slide:nth-of-type(3) img:nth-child(4) {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+  -webkit-animation: slide3 18s linear infinite 6s backwards;
+          animation: slide3 18s linear infinite 6s backwards;
+}
+.main_slide .slide_box .slide:nth-of-type(3) img:nth-child(5) {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  -webkit-animation: slide3 20s linear infinite 9s backwards;
+          animation: slide3 20s linear infinite 9s backwards;
+}
+.main_slide .slide_box .slide:last-of-type {
+  position: relative;
+}
+.main_slide .slide_box .slide:last-of-type img:nth-child(1) {
+  position: absolute;
+  right: 300px;
+}
+.main_slide .slide_box .slide:last-of-type img:nth-child(2) {
+  position: absolute;
+  right: 300px;
+  -webkit-animation: slide4 1s linear infinite alternate;
+          animation: slide4 1s linear infinite alternate;
+}
+.main_slide .slide_box .slide:last-of-type img:nth-child(3) {
+  position: absolute;
+  top: 200px;
+  right: 300px;
+  -webkit-animation: slide5 1.5s linear infinite alternate;
+          animation: slide5 1.5s linear infinite alternate;
+}
+.main_slide .slide_box .slide:last-of-type img:nth-child(4) {
+  position: absolute;
+  top: 200px;
+  right: 700px;
+  transform: translateY(0);
+  -webkit-animation: slide4 2s linear infinite alternate;
+          animation: slide4 2s linear infinite alternate;
+}
+.main_slide .slide_box .slide:last-of-type img:nth-child(5) {
+  position: absolute;
+  top: 50px;
+  right: 700px;
+  -webkit-animation: slide2 2.5s linear infinite alternate;
+          animation: slide2 2.5s linear infinite alternate;
 }
 .main_slide .slide_button {
   width: 120px;
@@ -224,7 +294,7 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -239,7 +309,35 @@ header {
 .cate1 {
   width: 20%;
   height: 200px;
-  background-color: crimson;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.cate1:first-child {
+  background-color: #f9f1fe;
+}
+.cate1:nth-child(2) {
+  background-color: #fbf4ea;
+}
+.cate1:nth-child(3) {
+  background-color: #f4e6e5;
+}
+.cate1:nth-child(4) {
+  background-color: #e7f2f4;
+}
+.cate1 p {
+  font-size: 20px;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+.cate1 span {
+  margin-top: 3%;
+  margin-left: 10%;
+}
+.cate1 img {
+  margin-left: 10%;
 }
 
 .books1 {
@@ -279,7 +377,7 @@ header {
   box-shadow: 4px 4px 4px #ddd;
 }
 .books1 #book_box .books:hover .books_text {
-  bottom: 30px;
+  bottom: 40px;
 }
 .books1 #book_box .books_img {
   width: 60%;
@@ -292,11 +390,33 @@ header {
 }
 .books1 #book_box .books_text {
   width: 100%;
-  height: 100px;
+  height: 150px;
   background-color: white;
   position: absolute;
   bottom: 0;
   transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.books1 #book_box .books_text h6 {
+  width: 80%;
+  height: 20%;
+  height: auto;
+  color: #aaa;
+  font-size: 13px;
+  margin-top: 5%;
+}
+.books1 #book_box .books_text h3 {
+  width: 80%;
+  font-size: 17px;
+  height: 30%;
+}
+.books1 #book_box .books_text p {
+  width: 80%;
+  margin-top: 5%;
+  color: #333;
 }
 .books1 #book_box .books_text2 {
   width: 100%;
@@ -316,7 +436,6 @@ header {
 .books1 #book_box .books_text2 .icon2 {
   width: 20px;
   height: 20px;
-  background-color: cornsilk;
 }
 
 article {
@@ -396,15 +515,36 @@ article h1 {
 .art1 .art1_text2 .icon3_box .icon3 {
   width: 20px;
   height: 20px;
-  background-color: coral;
 }
 .art1 .art1_text {
   width: 100%;
-  height: 100px;
+  height: 150px;
   background-color: white;
   position: absolute;
   bottom: 0;
   transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.art1 .art1_text h6 {
+  width: 80%;
+  height: 20%;
+  height: auto;
+  color: #aaa;
+  font-size: 13px;
+  margin-top: 5%;
+}
+.art1 .art1_text h3 {
+  width: 80%;
+  font-size: 15px;
+  height: 35%;
+}
+.art1 .art1_text p {
+  width: 80%;
+  margin-top: 5%;
+  color: #333;
 }
 
 .deal {
@@ -590,5 +730,65 @@ article h1 {
   }
   to {
     top: 40px;
+  }
+}
+@-webkit-keyframes slide3 {
+  0% {
+    right: 700px;
+    opacity: 0;
+  }
+  3% {
+    right: 700px;
+    opacity: 1;
+  }
+  100% {
+    right: 300px;
+    opacity: 0;
+  }
+}
+@keyframes slide3 {
+  0% {
+    right: 700px;
+    opacity: 0;
+  }
+  3% {
+    right: 700px;
+    opacity: 1;
+  }
+  100% {
+    right: 300px;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slide4 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px) translateX(10px);
+  }
+}
+@keyframes slide4 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px) translateX(10px);
+  }
+}
+@-webkit-keyframes slide5 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-15px) translateX(-15px);
+  }
+}
+@keyframes slide5 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-15px) translateX(-15px);
   }
 }
