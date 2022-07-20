@@ -702,13 +702,13 @@
         <div class="new_book_box">
             <div class="new_book1">
                 <div class="new_img">
-
+                    <img src="img/new1.png" alt="#">
                 </div>
 
                 <div class="new_text2">
                     <h2>대박 할인</h2>
                     <h1>Sale -25%</h1>
-                    <p>지금 주문 시 $100</p>
+                    <p>지금 주문 시 8천원</p>
                     <div class="new_button">View More</div>
                 </div>
         
@@ -719,25 +719,99 @@
                 <div class="new_text3"></div>
                 <div class="new_text4">
                     <p>ADD TO CART </p>
-                    <div class="icon4"></div>
-                    <div class="icon4"></div>
+                    <div class="icon4_box">
+                    <div class="icon4"><img src="img/my2.png" alt="#"></div>
+                    <div class="icon4"><img src="img/my4.png" alt="#"></div>
+                </div>
+                </div>
+
+            </div>
+            <div class="new_book2">
+                <div class="new_book3"></div>
+                <div class="new_text3"></div>
+                <div class="new_text4">
+                    <p>ADD TO CART </p>
+                    <div class="icon4_box">
+                    <div class="icon4"><img src="img/my2.png" alt="#"></div>
+                    <div class="icon4"><img src="img/my4.png" alt="#"></div>
+                </div>
+                </div>
+
+            </div>
+            <div class="new_book2">
+                <div class="new_book3"></div>
+                <div class="new_text3"></div>
+                <div class="new_text4">
+                    <p>ADD TO CART </p>
+                    <div class="icon4_box">
+                    <div class="icon4"><img src="img/my2.png" alt="#"></div>
+                    <div class="icon4"><img src="img/my4.png" alt="#"></div>
+                </div>
+                </div>
+
+            </div>
+            <div class="new_book2">
+                <div class="new_book3"></div>
+                <div class="new_text3"></div>
+                <div class="new_text4">
+                    <p>ADD TO CART </p>
+                    <div class="icon4_box">
+                    <div class="icon4"><img src="img/my2.png" alt="#"></div>
+                    <div class="icon4"><img src="img/my4.png" alt="#"></div>
+                </div>
+                </div>
+
+            </div>
+            <div class="new_book2">
+                <div class="new_book3"></div>
+                <div class="new_text3"></div>
+                <div class="new_text4">
+                    <p>ADD TO CART </p>
+                    <div class="icon4_box">
+                    <div class="icon4"><img src="img/my2.png" alt="#"></div>
+                    <div class="icon4"><img src="img/my4.png" alt="#"></div>
+                </div>
+                </div>
+
+            </div>
+            <div class="new_book2">
+                <div class="new_book3"></div>
+                <div class="new_text3"></div>
+                <div class="new_text4">
+                    <p>ADD TO CART </p>
+                    <div class="icon4_box">
+                    <div class="icon4"><img src="img/my2.png" alt="#"></div>
+                    <div class="icon4"><img src="img/my4.png" alt="#"></div>
+                </div>
+                </div>
+
+            </div>
+            <div class="new_book2">
+                <div class="new_book3"></div>
+                <div class="new_text3"></div>
+                <div class="new_text4">
+                    <p>ADD TO CART </p>
+                    <div class="icon4_box">
+                    <div class="icon4"><img src="img/my2.png" alt="#"></div>
+                    <div class="icon4"><img src="img/my4.png" alt="#"></div>
+                </div>
+                </div>
+
+            </div>
+            <div class="new_book2">
+                <div class="new_book3"></div>
+                <div class="new_text3"></div>
+                <div class="new_text4">
+                    <p>ADD TO CART </p>
+                    <div class="icon4_box">
+                    <div class="icon4"><img src="img/my2.png" alt="#"></div>
+                    <div class="icon4"><img src="img/my4.png" alt="#"></div>
+                </div>
                 </div>
 
             </div>
 
-            <div class="new_book2"></div>
-
-            <div class="new_book2"></div>
-
-            <div class="new_book2"></div>
-
-            <div class="new_book2"></div>
-
-            <div class="new_book2"></div>
-
-            <div class="new_book2"></div>
-
-            <div class="new_book2"></div>
+       
 
         </div>
     </div>
@@ -905,6 +979,44 @@
 
             });
 
+            $.ajax({
+
+method: "GET",
+
+url: "https://dapi.kakao.com/v3/search/book?target=title",
+
+data: { query: '역사' },
+headers: { Authorization: "KakaoAK 7b2300fc6315bb65035d1a3c7b49b161" }
+
+})
+
+.done(function (msg4) {
+
+    var book4 = document.getElementsByClassName('new_book3');
+
+    for (var i = 0; i < book4.length; i++) {
+
+
+        $(".new_book3").eq(i).append('<a href="#">' + "<img src='" + msg4.documents[i].thumbnail + "'>" + "</a>");
+            var sale_price5=Math.floor(msg4.documents[i].sale_price);
+           var price6=Math.ceil(sale_price5/100)*100;
+
+
+
+        var thumbnail=msg4.documents[i].thumbnail;
+
+        $(".new_text3").eq(i).append('<span>' + msg4.documents[i].publisher + '</span>');
+        $(".new_text3").eq(i).append("<h3>" + '<a href="sub_book13.html">' + msg4.documents[i].title + "</a>" + "</h3>");
+        $(".new_text3").eq(i).append("<h6>" + msg4.documents[i].authors + "</h6>");
+        $(".new_text3").eq(i).append('<p>&#92;' + price6 + '</p>');
+
+    }
+
+});
+
+
+
+
 
 
 
@@ -967,7 +1079,7 @@
 
             $('.circle').on('click', function () {
                 var index = $(this).index();
-                $('.deal_slide_box').stop().animate({ marginLeft: index * -slide2}, 'fast', 'swing');
+                $('.deal_slide_box').stop().animate({ marginLeft: index * -slide2-6}, 'fast', 'swing');
             });
 
 

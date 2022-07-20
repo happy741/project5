@@ -867,7 +867,7 @@ article {
 
 &:nth-child(3){
     .deal_book{
-        background-image: url(../img/book3.jpg.crdownload);
+        background-image: url(../img/book3.jpg);
         @include bg;
     }
 }
@@ -891,7 +891,7 @@ article {
 
 &:nth-child(6){
     .deal_book{
-        background-image: url(../img/book6.jpg);
+        background-image: url(../img/book6.jpg.crdownload);
         @include bg;
     }
 }
@@ -998,38 +998,132 @@ article {
         .new_book1 {
             width: 32%;
             height: $h;
-     
+            background-color: #fff3e4;
             @include border;
+            @include flex{
+                flex-direction: column;
+            };
 
+            .new_text2{
+                h2{font-size: 40px;}
+                h1{font-size: 50px;
+                color:#f75454;}
+                p{font-size:40px;
+                color:#666;}
+                
+                .new_button{
+                    width:200px;
+                    height:50px;
+                    background-color: #9f7e58;
+                    @include flex;
+                    color:#fff;
+                    margin-top: 8%;
+                }
+            }
+
+            
         }
 
         .new_book2 {
             width: 16.81%;
             height: 373px;
             position:relative;
+            transition:0.3s ease;
            
            @include border;
            @include flex4(flex,flex-end,center,column);
           
+           &:hover {
+            border: 1px solid #333;
+            box-shadow: 4px 4px 4px #ddd;
+            }
+
            .new_book3{
             width:150px;
             height:210px;
-            background-color: #ce9b9b;
+       
+            img{width:100%;
+                height:100%;
+            }
+
            }
 
            .new_text3{
             width:100%;
             height:135px;
-            background-color: cadetblue;
+            background-color: white;
             transition:0.3s ease;
             position:absolute;
+            @include flex{
+                flex-direction: column;
+            };
+
+            h6{
+                width:80%;
+                height:7%;
+                height:auto;
+                color:#aaa;
+                font-size:13px;
+                margin-top:12%;
+               
+            }
+    
+            h3{
+                width:80%;
+                font-size:13px;
+                  height:25%;
+            }
+    
+            p{
+                width:80%;
+                margin-top:2%;
+                color:#333;
+            }
+    
+            span{
+                width:80%;
+                font-size: 12px;
+                color: #f30b0b;
+                display: inline-block;
+      
+                margin-top:5%;
+            }
            }
 
            .new_text4{
-            width:100%;
-            height:130px;
-            background-color: #a84f4f;
-            @include flex4(flex,center, flex-end,row);
+            width:95%;
+            height:120px;
+    
+            @include flex4(flex,space-around, flex-end,row);
+            margin-bottom: 5%;
+        
+
+            .icon4{
+                width:30px;
+                height:30px;
+                border-radius: 50%;
+            
+                margin-bottom: -3%;
+                @include flex;
+                transition:0.3s ease;
+
+                img{
+                    width:65%;
+                }
+
+                &:hover{
+                    background-color: #f75454;
+                }
+            }
+
+            .icon4_box{
+                width:70px;
+                height:25px;
+                @include flex4(flex,space-around,center,row);
+    
+            }
+
+
            }
 
            &:hover .new_text3{
