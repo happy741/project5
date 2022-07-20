@@ -384,7 +384,6 @@ header {
 .books1 #book_box .books_img {
   width: 60%;
   height: 65%;
-  background-color: darkgreen;
 }
 .books1 #book_box .books_img img {
   width: 100%;
@@ -592,8 +591,9 @@ article h1 {
 
 .deal {
   width: 1600px;
-  height: 900px;
+  height: 634px;
   margin: 10% auto;
+  background-color: #fff3e4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -614,8 +614,7 @@ article h1 {
 
 .deal_slide {
   width: 80%;
-  height: 500px;
-  background-color: brown;
+  height: 334px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -630,13 +629,14 @@ article h1 {
 .deal_slide .deal_slide_box_box {
   width: 1150px;
   height: 100%;
-  background-color: chocolate;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
   overflow: hidden;
 }
 .deal_slide .deal_slide_box {
   width: 3450px;
   height: 100%;
-  background-color: rgb(126, 119, 93);
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -644,10 +644,16 @@ article h1 {
 
 .deal_box {
   width: 575px;
-  height: 100%;
-  background-color: chartreuse;
-  border: 1px solid #ddd;
+  height: 333px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid rgba(0, 0, 0, 0);
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  transition: 0.3s ease;
   display: flex;
+}
+.deal_box:hover {
+  box-shadow: 0px 2px 30px 10px rgba(221, 221, 221, 0.5);
 }
 .deal_box:first-of-type .deal_book {
   background-image: url(../img/book1.jpg.crdownload);
@@ -681,8 +687,7 @@ article h1 {
 }
 .deal_box .deal_book {
   width: 250px;
-  height: 450px;
-  background-color: #f9f1fe;
+  height: 267px;
   margin-left: 3%;
   margin-top: 5%;
 }
@@ -692,9 +697,35 @@ article h1 {
 }
 .deal_box .deal_text2 {
   width: 295px;
-  height: 450px;
-  background-color: aqua;
+  height: 464px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 5%;
+}
+.deal_box .deal_text2 .text2_box {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+.deal_box .deal_text2 .text2_box2 {
+  width: 80%;
+  height: 50%;
+}
+.deal_box .deal_text2 .text2_box2 .count {
+  width: 80%;
+  height: 1rem;
+  background-color: #fff3e4;
+}
+position:relative .deal_box .deal_text2 .text2_box2 .count::after {
+  content: "";
+  width: 65%;
+  height: 1rem;
+  background-color: #9f7e58;
+  position: absolute;
 }
 .deal_box .deal_text2 span {
   color: #f30b0b;
@@ -808,6 +839,9 @@ article h1 {
   border: 1px solid #333;
   box-shadow: 4px 4px 4px #ddd;
 }
+.new .new_book_box .new_book2:hover .new_text3 {
+  bottom: 40px;
+}
 .new .new_book_box .new_book2 .new_book3 {
   width: 150px;
   height: 210px;
@@ -822,6 +856,7 @@ article h1 {
   background-color: white;
   transition: 0.3s ease;
   position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -885,13 +920,10 @@ article h1 {
   align-items: center;
   flex-direction: row;
 }
-.new .new_book_box .new_book2:hover .new_text3 {
-  bottom: 40px;
-}
 
 .bio {
   width: 1300px;
-  height: 550px;
+  height: 400px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -904,8 +936,70 @@ article h1 {
 }
 .bio .bio_slide {
   width: 100%;
-  height: 400px;
-  background-color: darkblue;
+  height: 250px;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  overflow: hidden;
+}
+.bio .bio_slide_box {
+  width: 3031px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bio .bio_slide_box .bio1 {
+  width: 433px;
+  height: 99%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid rgba(0, 0, 0, 0);
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  transition: 0.3s ease;
+}
+.bio .bio_slide_box .bio1:hover {
+  box-shadow: 0px 2px 10px 10px rgba(221, 221, 221, 0.5);
+}
+.bio .bio_img {
+  width: 30%;
+  height: 200px;
+  background-color: #aaa;
+}
+.bio .bio_img img {
+  width: 100%;
+  height: 100%;
+}
+.bio .bio_text {
+  width: 65%;
+  height: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.bio .bio_text span {
+  width: 80%;
+  color: #f30b0b;
+  font-size: 12px;
+}
+.bio .bio_text h3 {
+  width: 80%;
+  color: #333;
+  font-size: 18px;
+  margin: 2% 0;
+}
+.bio .bio_text h6 {
+  width: 80%;
+  color: #666;
+  font-size: 12px;
+  margin: 2% 0;
+}
+.bio .bio_text p {
+  width: 80%;
+  color: #333;
 }
 .bio .button {
   width: 200px;
