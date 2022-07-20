@@ -47,6 +47,29 @@ $f:'NanumSquareRound';
     align-items: $align;
     flex-direction: $direction
 }
+@mixin bg{
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin border{
+    border: {
+        bottom:$border;
+        right:$border;
+        left:$border2;
+        top:$border2;
+    }
+}
+
+@mixin border2{
+    border: {
+        top:$border;
+        left:$border;
+
+    }
+}
+
+
 
 
 header {
@@ -96,6 +119,8 @@ header {
         height: 30px;
 
         @include flex;
+
+        
     }
 
     cursor: $c;
@@ -464,6 +489,7 @@ header {
 
     #book_box {
         $border: 1px solid #ddd !global;
+        $border2:1px solid rgba(0,0,0,0) !global;
         width: $w;
         height: 400px;
         box-sizing: border-box;
@@ -486,6 +512,8 @@ header {
             border: {
                 right: $border;
                 bottom: $border;
+                left:$border2;
+                top:$border2;
 
             }
 
@@ -499,7 +527,7 @@ header {
             }
 
             &:hover .books_text {
-                bottom: 40px;
+                bottom: 45px;
             }
 
         }
@@ -529,6 +557,13 @@ header {
             @include flex
             {flex-direction: column;};
 
+            span{
+                width:80%;
+                font-size: 12px;
+                color: #f30b0b;
+                margin-bottom:3%;
+            }
+
             h6{
                 width:80%;
                 height:20%;
@@ -555,7 +590,7 @@ header {
         .books_text2 {
             width: 100%;
             height: 25%;
-            margin-bottom: 2.5%;
+            margin-bottom: 5%;
             @include flex4(flex, space-around, flex-end, row);
 
             .icon2_box {
@@ -566,9 +601,20 @@ header {
             }
 
             .icon2 {
-                width: 20px;
-                height: 20px;
-      
+                width: 35px;
+                height: 35px;
+                @include flex;
+                border-radius: 50%;
+                transition:0.3s ease;
+                margin-bottom: -6%;
+                
+                img{
+                    width:65%;
+                }
+
+                &:hover{
+                    background-color: #f75454;
+                }
 
             }
         }
@@ -630,14 +676,24 @@ article {
 }
 
 .art1 {
-    width: 16.5%;
+    width: 16.513%;
     height: 320px;
+
+
 
     border: {
         right: $border;
         bottom: $border;
+        left:$border2;
+        top:$border2;
 
     }
+
+    &:hover {
+        border: 1px solid #333;
+        box-shadow: 4px 4px 4px #ddd;
+    }
+
 
     @include flex4(flex, flex-end, center, column);
     position:relative;
@@ -645,6 +701,7 @@ article {
 
     &:hover .art1_text {
         bottom: 40px;
+
     }
 
     .art1_img {
@@ -669,8 +726,19 @@ article {
             @include flex3;
 
             .icon3 {
-                width: 20px;
-                height: 20px;
+                width: 30px;
+                height: 30px;
+                transition:0.3s ease;
+                border-radius: 50%;
+                @include flex;
+
+                img{
+                    width:65%;
+                }
+
+                &:hover{
+                    background-color: #f75454;
+                }
          
             }
         }
@@ -708,12 +776,19 @@ article {
             margin-top:5%;
             color:#333;
         }
+
+        span{
+            width:80%;
+            font-size: 12px;
+            color: #f30b0b;
+            margin-bottom:3%;
+        }
     }
 
 }
 
 .deal {
-    width: 100%;
+    width: 1600px;
     height: 900px;
     margin: 10% auto;
 
@@ -735,6 +810,7 @@ article {
     height: 50px;
     @include flex2;
     margin-bottom: 4%;
+
 }
 
 .deal_slide {
@@ -752,24 +828,122 @@ article {
     }
 
     .deal_slide_box_box {
-        width: 1000px;
+        width: 1150px;
         height: $h;
         background-color: chocolate;
         overflow: hidden;
     }
 
     .deal_slide_box {
-        width: 5000px;
+        width: 3450px;
         height: $h;
         background-color: rgb(126, 119, 93);
         @include flex;
+
     }
 }
 
 .deal_box {
-    width: 1000px;
+    width: 575px;
     height: $h;
     background-color: chartreuse;
+    border:$border;
+    display: flex;
+
+
+&:first-of-type{
+    .deal_book{
+        background-image: url(../img/book1.jpg.crdownload);
+        @include bg;
+    }
+}
+
+&:nth-child(2){
+    .deal_book{
+        background-image: url(../img/book2.jpg);
+        @include bg;
+    }
+}
+
+&:nth-child(3){
+    .deal_book{
+        background-image: url(../img/book3.jpg.crdownload);
+        @include bg;
+    }
+}
+
+
+&:nth-child(4){
+    .deal_book{
+        background-image: url(../img/book4.jpg);
+        @include bg;
+    }
+}
+
+
+&:nth-child(5){
+    .deal_book{
+        background-image: url(../img/book5.jpg);
+        @include bg;
+    }
+}
+
+
+&:nth-child(6){
+    .deal_book{
+        background-image: url(../img/book6.jpg);
+        @include bg;
+    }
+}
+
+
+
+    .deal_book{
+        width:250px;
+        height:450px;
+        background-color: #f9f1fe;
+        margin: {
+            left:3%;
+            top:5%;
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
+
+    .deal_text2{
+        width:295px;
+        height:450px;
+        background-color: aqua;
+      
+        margin: {
+        
+            top:5%;
+        }
+
+        
+    span{
+        color:#f30b0b;
+    }
+
+    h3{
+        color:#333;
+        font-size: 25px;
+    }
+
+    h6{
+        color:#666;
+        font-size: 15px;
+       
+    }
+
+    p{
+        color:#333;
+    }
+
+
+    }
 }
 
 
@@ -814,21 +988,55 @@ article {
         @include flex {
             flex-wrap: wrap;
             flex-direction: column;
-        }
+            align-content: center;
+        };
+        @include border2;
 
-        ;
+        
+       
 
         .new_book1 {
-            width: 30%;
+            width: 32%;
             height: $h;
-            background-color: deepskyblue;
+     
+            @include border;
 
         }
 
         .new_book2 {
-            width: 17%;
-            height: 50%;
-            background-color: rgb(124, 151, 151);
+            width: 16.81%;
+            height: 373px;
+            position:relative;
+           
+           @include border;
+           @include flex4(flex,flex-end,center,column);
+          
+           .new_book3{
+            width:150px;
+            height:210px;
+            background-color: #ce9b9b;
+           }
+
+           .new_text3{
+            width:100%;
+            height:135px;
+            background-color: cadetblue;
+            transition:0.3s ease;
+            position:absolute;
+           }
+
+           .new_text4{
+            width:100%;
+            height:130px;
+            background-color: #a84f4f;
+            @include flex4(flex,center, flex-end,row);
+           }
+
+           &:hover .new_text3{
+            bottom:40px;
+           }
+
+
         }
     }
 

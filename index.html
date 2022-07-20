@@ -42,14 +42,30 @@
                 </div>
 
                 <ul>
-                    <li>국내도서</li>
-                    <li>외국도서</li>
-                    <li>eBook</li>
-                    <li>웹소설</li>
-                    <li>기프트</li>
-                    <li>음반</li>
-                    <li>중고장터</li>
-                    <li>DVD</li>
+                    <a href="">
+                        <li>국내도서</li>
+                    </a>
+                    <a href="">
+                        <li>외국도서</li>
+                    </a>
+                    <a href="">
+                        <li>eBook</li>
+                    </a>
+                    <a href="">
+                        <li>웹소설</li>
+                    </a>
+                    <a href="">
+                        <li>기프트</li>
+                    </a>
+                    <a href="">
+                        <li>음반</li>
+                    </a>
+                    <a href="">
+                        <li>중고장터</li>
+                    </a>
+                    <a href="">
+                        <li>DVD</li>
+                    </a>
                 </ul>
 
                 <div id="search">
@@ -589,11 +605,72 @@
             <div id="prev"></div>
             <div class="deal_slide_box_box">
                 <div class="deal_slide_box">
-                    <div class="deal_box">11</div>
-                    <div class="deal_box">2</div>
-                    <div class="deal_box">3</div>
-                    <div class="deal_box">4</div>
-                    <div class="deal_box">5</div>
+                    <div class="deal_box">
+                        <div class="deal_book">
+
+                        </div>
+
+                        <div class="deal_text2">
+
+                        </div>
+
+                    </div>
+
+                    <div class="deal_box">
+                        <div class="deal_book">
+
+                        </div>
+
+                        <div class="deal_text2">
+
+                        </div>
+
+                    </div>
+
+                    <div class="deal_box">
+                        <div class="deal_book">
+
+                        </div>
+
+                        <div class="deal_text2">
+
+                        </div>
+
+                    </div>
+
+                    <div class="deal_box">
+                        <div class="deal_book">
+
+                        </div>
+
+                        <div class="deal_text2">
+
+                        </div>
+
+                    </div>
+
+                    <div class="deal_box">
+                        <div class="deal_book">
+
+                        </div>
+
+                        <div class="deal_text2">
+
+                        </div>
+
+                    </div>
+
+                    <div class="deal_box">
+                        <div class="deal_book">
+
+                        </div>
+
+                        <div class="deal_text2">
+
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
             <div id="next"></div>
@@ -623,16 +700,45 @@
         </div>
 
         <div class="new_book_box">
-            <div class="new_book1"></div>
+            <div class="new_book1">
+                <div class="new_img">
+
+                </div>
+
+                <div class="new_text2">
+                    <h2>대박 할인</h2>
+                    <h1>Sale -25%</h1>
+                    <p>지금 주문 시 $100</p>
+                    <div class="new_button">View More</div>
+                </div>
+        
+            </div>
+
+            <div class="new_book2">
+                <div class="new_book3"></div>
+                <div class="new_text3"></div>
+                <div class="new_text4">
+                    <p>ADD TO CART </p>
+                    <div class="icon4"></div>
+                    <div class="icon4"></div>
+                </div>
+
+            </div>
 
             <div class="new_book2"></div>
+
             <div class="new_book2"></div>
+
             <div class="new_book2"></div>
+
             <div class="new_book2"></div>
+
             <div class="new_book2"></div>
+
             <div class="new_book2"></div>
+
             <div class="new_book2"></div>
-            <div class="new_book2"></div>
+
         </div>
     </div>
 
@@ -707,15 +813,16 @@
                     $(".books_img").eq(i).append('<a href="#">' + "<img src='" + msg.documents[i].thumbnail + "'/>" + "</a>");
 
 
+                    var sale_price1 = Math.floor(msg.documents[i].sale_price);
+                    var price1 = Math.ceil(sale_price1 / 100) * 100;
 
 
 
 
-
-
+                    $(".books_text").eq(i).append('<span>' + msg.documents[i].publisher + '</span>');
                     $(".books_text").eq(i).append("<h3>" + '<a href="sub_book13.html">' + msg.documents[i].title + "</a>" + "</h3>");
                     $(".books_text").eq(i).append("<h6>" + msg.documents[i].authors + "</h6>");
-                    $(".books_text").eq(i).append('<p>&#92;' + msg.documents[i].sale_price + '</p>');
+                    $(".books_text").eq(i).append('<p>&#92;' + price1 + '</p>');
 
                 }
 
@@ -746,12 +853,53 @@
 
 
 
+                    var sale_price2 = Math.floor(msg2.documents[i].sale_price);
+                    var price3 = Math.ceil(sale_price2 / 100) * 100;
 
-
-
+                    $(".art1_text").eq(i).append('<span>' + msg2.documents[i].publisher + '</span>');
                     $(".art1_text").eq(i).append("<h3>" + '<a href="sub_book13.html">' + msg2.documents[i].title + "</a>" + "</h3>");
                     $(".art1_text").eq(i).append("<h6>" + msg2.documents[i].authors + "</h6>");
-                    $(".art1_text").eq(i).append('<p>&#92;' + msg2.documents[i].sale_price + '</p>');
+                    $(".art1_text").eq(i).append('<p>&#92;' + price3 + '</p>');
+
+                }
+
+            });
+
+
+        $.ajax({
+
+            method: "GET",
+
+            url: "https://dapi.kakao.com/v3/search/book?target=title",
+
+            data: { query: '여행' },
+            headers: { Authorization: "KakaoAK 7b2300fc6315bb65035d1a3c7b49b161" }
+
+        })
+
+            .done(function (msg3) {
+
+                var book3 = document.getElementsByClassName('deal_box');
+
+                for (var i = 0; i < book3.length; i++) {
+
+
+                    // $(".deal_book").eq(i).append('<a href="#">' + "<img src='" + msg3.documents[i].thumbnail + "'>" + "</a>");
+                        var sale_price4=Math.floor(msg3.documents[i].sale_price);
+                       var price4=Math.ceil(sale_price4/100)*100;
+
+   
+
+                    var thumbnail=msg3.documents[i].thumbnail;
+                    // $(".deal_book").eq(i).css("background-image","url("+thumbnail+")").css('background-size','contain').css('background-repeat','no-repeat');
+
+                   
+
+
+                    $(".deal_text2").eq(i).append('<span>' + msg3.documents[i].publisher + '</span>');
+                    $(".deal_text2").eq(i).append("<h3>" + '<a href="sub_book13.html">' + msg3.documents[i].title + "</a>" + "</h3>");
+                    $(".deal_text2").eq(i).append("<h6>" + msg3.documents[i].authors + "</h6>");
+                    $(".deal_text2").eq(i).append('<p>&#92;' + price4 + '</p>');
 
                 }
 
@@ -762,31 +910,45 @@
 
         $(function () {
 
-            var page = 0;
+            // var page = 0;
 
-            $('#prev').click(function () {
-                page--;
+            // $('#prev').click(function () {
+            //     page--;
 
-                if (page < 0) {
-                    page = 0;
-                }
+            //     if (page < 0) {
+            //         page = 0;
+            //     }
 
-                $('.deal_slide_box').stop().animate({ marginLeft: -1000 * page }, 800);
+            //     $('.deal_slide_box').stop().animate({ marginLeft: -1000 * page }, 800);
 
-            });
+            // });
 
-            $('#next').click(function () {
-                page++;
+            // $('#next').click(function () {
+            //     page++;
 
-                if (page > $('.deal_box').length) {
-                    page = $('.deal_box').length - 1;
-                }
-                $('.deal_slide_box').stop().animate({ marginLeft: -1000 }, 800);
-            });
+            //     if (page > $('.deal_box').length) {
+            //         page = $('.deal_box').length - 1;
+            //     }
+            //     $('.deal_slide_box').stop().animate({ marginLeft: -1000 }, 800);
+            // });
 
 
 
-            var slide = $('.slide').width();
+            // var slide = $('.slide').width();
+
+            // $('.sb').on('click', function () {
+            //     var index = $(this).index();
+            //     $('.slide_box_box').stop().animate({ marginLeft: index * -slide }, 'fast', 'swing');
+            // });
+
+
+
+            var slide=$('.slide').width();
+
+    $('.sb').on('click',function(){
+        var index=$(this).index();
+        $('.slide_box_box').stop().animate({marginLeft:index*-slide},'fast','swing');
+    });
 
             $('.sb').on('click', function () {
                 var index = $(this).index();
@@ -794,7 +956,31 @@
             });
 
 
-        });
+
+    var slide2=$('.deal_box').width();
+
+
+    $('.circle').on('click',function(){
+        var index=$(this).index();
+        $('.deal_slide_box').stop().animate({marginLeft:index*-slide2},'fast','swing');
+    });
+
+            $('.circle').on('click', function () {
+                var index = $(this).index();
+                $('.deal_slide_box').stop().animate({ marginLeft: index * -slide2}, 'fast', 'swing');
+            });
+
+
+
+
+
+
+});
+
+        
+ 
+
+        
     </script>
 
 

@@ -366,6 +366,8 @@ header {
   transition: 0.3s ease;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+  border-left: 1px solid rgba(0, 0, 0, 0);
+  border-top: 1px solid rgba(0, 0, 0, 0);
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -377,7 +379,7 @@ header {
   box-shadow: 4px 4px 4px #ddd;
 }
 .books1 #book_box .books:hover .books_text {
-  bottom: 40px;
+  bottom: 45px;
 }
 .books1 #book_box .books_img {
   width: 60%;
@@ -400,6 +402,12 @@ header {
   align-items: center;
   flex-direction: column;
 }
+.books1 #book_box .books_text span {
+  width: 80%;
+  font-size: 12px;
+  color: #f30b0b;
+  margin-bottom: 3%;
+}
 .books1 #book_box .books_text h6 {
   width: 80%;
   height: 20%;
@@ -421,7 +429,7 @@ header {
 .books1 #book_box .books_text2 {
   width: 100%;
   height: 25%;
-  margin-bottom: 2.5%;
+  margin-bottom: 5%;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -434,8 +442,20 @@ header {
   align-items: center;
 }
 .books1 #book_box .books_text2 .icon2 {
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  margin-bottom: -6%;
+}
+.books1 #book_box .books_text2 .icon2 img {
+  width: 65%;
+}
+.books1 #book_box .books_text2 .icon2:hover {
+  background-color: #f75454;
 }
 
 article {
@@ -478,16 +498,22 @@ article h1 {
 }
 
 .art1 {
-  width: 16.5%;
+  width: 16.513%;
   height: 320px;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+  border-left: 1px solid rgba(0, 0, 0, 0);
+  border-top: 1px solid rgba(0, 0, 0, 0);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   position: relative;
   transition: 0.3s ease;
+}
+.art1:hover {
+  border: 1px solid #333;
+  box-shadow: 4px 4px 4px #ddd;
 }
 .art1:hover .art1_text {
   bottom: 40px;
@@ -513,8 +539,19 @@ article h1 {
   align-items: center;
 }
 .art1 .art1_text2 .icon3_box .icon3 {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s ease;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.art1 .art1_text2 .icon3_box .icon3 img {
+  width: 65%;
+}
+.art1 .art1_text2 .icon3_box .icon3:hover {
+  background-color: #f75454;
 }
 .art1 .art1_text {
   width: 100%;
@@ -546,9 +583,15 @@ article h1 {
   margin-top: 5%;
   color: #333;
 }
+.art1 .art1_text span {
+  width: 80%;
+  font-size: 12px;
+  color: #f30b0b;
+  margin-bottom: 3%;
+}
 
 .deal {
-  width: 100%;
+  width: 1600px;
   height: 900px;
   margin: 10% auto;
   display: flex;
@@ -585,13 +628,13 @@ article h1 {
   background-color: blanchedalmond;
 }
 .deal_slide .deal_slide_box_box {
-  width: 1000px;
+  width: 1150px;
   height: 100%;
   background-color: chocolate;
   overflow: hidden;
 }
 .deal_slide .deal_slide_box {
-  width: 5000px;
+  width: 3450px;
   height: 100%;
   background-color: rgb(126, 119, 93);
   display: flex;
@@ -600,9 +643,72 @@ article h1 {
 }
 
 .deal_box {
-  width: 1000px;
+  width: 575px;
   height: 100%;
   background-color: chartreuse;
+  border: 1px solid #ddd;
+  display: flex;
+}
+.deal_box:first-of-type .deal_book {
+  background-image: url(../img/book1.jpg.crdownload);
+  background-position: center;
+  background-size: cover;
+}
+.deal_box:nth-child(2) .deal_book {
+  background-image: url(../img/book2.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.deal_box:nth-child(3) .deal_book {
+  background-image: url(../img/book3.jpg.crdownload);
+  background-position: center;
+  background-size: cover;
+}
+.deal_box:nth-child(4) .deal_book {
+  background-image: url(../img/book4.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.deal_box:nth-child(5) .deal_book {
+  background-image: url(../img/book5.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.deal_box:nth-child(6) .deal_book {
+  background-image: url(../img/book6.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.deal_box .deal_book {
+  width: 250px;
+  height: 450px;
+  background-color: #f9f1fe;
+  margin-left: 3%;
+  margin-top: 5%;
+}
+.deal_box .deal_book img {
+  width: 100%;
+  height: 100%;
+}
+.deal_box .deal_text2 {
+  width: 295px;
+  height: 450px;
+  background-color: aqua;
+  margin-top: 5%;
+}
+.deal_box .deal_text2 span {
+  color: #f30b0b;
+}
+.deal_box .deal_text2 h3 {
+  color: #333;
+  font-size: 25px;
+}
+.deal_box .deal_text2 h6 {
+  color: #666;
+  font-size: 15px;
+}
+.deal_box .deal_text2 p {
+  color: #333;
 }
 
 .circle_box {
@@ -646,16 +752,54 @@ article h1 {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
+  align-content: center;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
 }
 .new .new_book_box .new_book1 {
-  width: 30%;
+  width: 32%;
   height: 100%;
-  background-color: deepskyblue;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid rgba(0, 0, 0, 0);
+  border-top: 1px solid rgba(0, 0, 0, 0);
 }
 .new .new_book_box .new_book2 {
-  width: 17%;
-  height: 50%;
-  background-color: rgb(124, 151, 151);
+  width: 16.81%;
+  height: 373px;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid rgba(0, 0, 0, 0);
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+.new .new_book_box .new_book2 .new_book3 {
+  width: 150px;
+  height: 210px;
+  background-color: #ce9b9b;
+}
+.new .new_book_box .new_book2 .new_text3 {
+  width: 100%;
+  height: 135px;
+  background-color: cadetblue;
+  transition: 0.3s ease;
+  position: absolute;
+}
+.new .new_book_box .new_book2 .new_text4 {
+  width: 100%;
+  height: 130px;
+  background-color: #a84f4f;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+}
+.new .new_book_box .new_book2:hover .new_text3 {
+  bottom: 40px;
 }
 
 .bio {
