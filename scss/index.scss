@@ -106,6 +106,11 @@ header {
         width: 190px;
         height: $h;
         @include flex;
+        transition:.3s ease;
+        
+        &:hover{
+            color:#9f7e58;
+        }
     }
 
     #my {
@@ -160,6 +165,13 @@ header {
         width: 600px;
         height: $h;
         @include flex3;
+        
+        li{
+            transition:.3s ease;
+            &:hover{
+                color:#9f7e58;
+            }
+        }
 
     }
 
@@ -461,7 +473,7 @@ header {
     height: 200px;
     display: flex;
     @include flex4(flex, center, flex-start, column);
-
+    cursor: $c;
     &:first-child {
         background-color: #f9f1fe;
     }
@@ -622,7 +634,7 @@ header {
             height: 25%;
             margin-bottom: 5%;
             @include flex4(flex, space-around, flex-end, row);
-
+            cursor:$c;
             .icon2_box {
                 width: 70px;
 
@@ -637,6 +649,7 @@ header {
                 border-radius: 50%;
                 transition: 0.3s ease;
                 margin-bottom: -6%;
+                cursor: $c;
 
                 img {
                     width: 65%;
@@ -704,6 +717,13 @@ article {
 
 
 }
+.art_box2{
+    display: none;
+}
+
+.art_box3{
+    display: none;
+}
 
 .art1 {
     width: 16.513%;
@@ -747,7 +767,7 @@ article {
         height: 70px;
         margin-bottom: 2.5%;
         @include flex4(flex, space-around, flex-end, row);
-
+        cursor:$c;
 
         .icon3_box {
             width: 70px;
@@ -761,7 +781,7 @@ article {
                 transition: 0.3s ease;
                 border-radius: 50%;
                 @include flex;
-
+                cursor: $c;
                 img {
                     width: 65%;
                 }
@@ -842,6 +862,14 @@ article {
     @include flex2;
     margin-bottom: 4%;
 
+    p{
+        cursor: $c;
+        transition: 0.3s ease;
+        &:hover{
+            color:#9f7e58;
+        }
+    }
+
 }
 
 .deal_slide {
@@ -855,7 +883,16 @@ article {
     #next {
         width: 50px;
         height: 50px;
-        background-color: blanchedalmond;
+        background-color: white;
+        border:1px solid #ddd;
+        font-size: 30px;
+        @include flex;
+        transition:.3s ease;
+        cursor: $c;
+        &:hover{
+            background-color: #333;
+            color:white;
+        }
     }
 
     .deal_slide_box_box {
@@ -966,7 +1003,7 @@ article {
 
         .text2_box {
             width: 80%;
-            height: 50%;
+            height: 40%;
             display: flex;
             flex-direction: column-reverse;
             justify-content: space-between;
@@ -975,19 +1012,24 @@ article {
         .text2_box2 {
             width: 80%;
             height: 50%;
+            margin-top:8%;
 
             .count {
                 width: 80%;
                 height: 1rem;
                 background-color: #fff3e4;
-
-                position:relative :after {
-                    content: "";
-                    width: 65%;
-                    height: 1rem;
-                    background-color: #9f7e58;
-                    position: absolute;
-                }
+                border-radius: 20px;
+                position:relative;
+                margin-top:3%;
+           
+            }
+            .count:after {
+                content: "";
+                width: 65%;
+                height: 1rem;
+                background-color: #9f7e58;
+                position: absolute;
+                border-radius: 20px;
             }
         }
 
@@ -1052,7 +1094,7 @@ article {
         .text_box {
             width: 450px;
             height: $h;
-
+            cursor: $c;
             @include flex2;
         }
     }
@@ -1066,10 +1108,9 @@ article {
             flex-direction: column;
             align-content: center;
         }
-        opacity: 0;
-        ;
+      
         @include border2;
-        
+        display: none;  
 
         .new_book1 {
             width: 32%;
@@ -1193,7 +1234,7 @@ article {
             .new_text4 {
                 width: 95%;
                 height: 120px;
-
+                cursor:$c;
                 @include flex4(flex, space-around, flex-end, row);
                 margin-bottom: 5%;
 
@@ -1202,10 +1243,12 @@ article {
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
-
+                    cursor:$c;
                     margin-bottom: -3%;
                     @include flex;
                     transition: 0.3s ease;
+
+                    
 
                     img {
                         width: 65%;
@@ -1241,8 +1284,8 @@ article {
             flex-direction: column;
             align-content: center;
         }
-        opacity: 0;
-        ;
+       display: none;
+        
         @include border2;
         
 
@@ -1368,16 +1411,19 @@ article {
             .new_text4 {
                 width: 95%;
                 height: 120px;
-
+                cursor: $c;
                 @include flex4(flex, space-around, flex-end, row);
                 margin-bottom: 5%;
 
+                p{
+                    cursor: $c;
+                }
 
                 .icon4 {
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
-
+                    cursor:$c;
                     margin-bottom: -3%;
                     @include flex;
                     transition: 0.3s ease;
@@ -1404,6 +1450,189 @@ article {
 
 
         }
+        
+
+        
+    }
+
+    .new_book_box4 {
+        width: 100%;
+        height: 750px;
+        
+        @include flex {
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+        }
+       display: none;
+        
+        @include border2;
+        
+
+        .new_book1 {
+            width: 32%;
+            height: $h;
+            background-color: #fff3e4;
+            @include border;
+
+            @include flex {
+                flex-direction: column;
+            }
+
+            ;
+
+
+
+            .new_text2 {
+                h2 {
+                    font-size: 40px;
+                }
+
+                h1 {
+                    font-size: 50px;
+                    color: #f75454;
+                }
+
+                p {
+                    font-size: 40px;
+                    color: #666;
+                }
+
+                .new_button {
+                    width: 200px;
+                    height: 50px;
+                    background-color: #9f7e58;
+                    @include flex;
+                    color: #fff;
+                    margin-top: 8%;
+                }
+            }
+
+
+        }
+
+        .new_book2 {
+            width: 16.81%;
+            height: 373px;
+            position: relative;
+            transition: 0.3s ease;
+
+            @include border;
+            @include flex4(flex, flex-end, center, column);
+
+            &:hover {
+                border: 1px solid #333;
+                box-shadow: 4px 4px 4px #ddd;
+            }
+
+            &:hover .new_text3 {
+                bottom: 40px;
+            }
+
+            .new_book3 {
+                width: 150px;
+                height: 210px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+            }
+
+            .new_text3 {
+                width: 100%;
+                height: 135px;
+                background-color: white;
+                transition: 0.3s ease;
+                position: absolute;
+                bottom: 0;
+
+                @include flex {
+                    flex-direction: column;
+                }
+
+                ;
+
+
+
+                h6 {
+                    width: 80%;
+                    height: 7%;
+                    height: auto;
+                    color: #aaa;
+                    font-size: 13px;
+                    margin-top: 12%;
+
+                }
+
+                h3 {
+                    width: 80%;
+                    font-size: 13px;
+                    height: 25%;
+                }
+
+                p {
+                    width: 80%;
+                    margin-top: 2%;
+                    color: #333;
+                }
+
+                span {
+                    width: 80%;
+                    font-size: 12px;
+                    color: #f30b0b;
+                    display: inline-block;
+
+                    margin-top: 5%;
+                }
+            }
+
+            .new_text4 {
+                width: 95%;
+                height: 120px;
+                cursor: $c;
+                @include flex4(flex, space-around, flex-end, row);
+                margin-bottom: 5%;
+
+                p{
+                    cursor: $c;
+                }
+
+                .icon4 {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    cursor:$c;
+                    margin-bottom: -3%;
+                    @include flex;
+                    transition: 0.3s ease;
+
+                    img {
+                        width: 65%;
+                    }
+
+                    &:hover {
+                        background-color: #f75454;
+                    }
+                }
+
+                .icon4_box {
+                    width: 70px;
+                    height: 25px;
+                    @include flex4(flex, space-around, center, row);
+
+                }
+
+
+            }
+
+
+
+        }
+        
+
+        
     }
 
    
@@ -1546,7 +1775,7 @@ article {
             .new_text4 {
                 width: 95%;
                 height: 120px;
-
+                cursor:$c;
                 @include flex4(flex, space-around, flex-end, row);
                 margin-bottom: 5%;
 
@@ -1555,7 +1784,7 @@ article {
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
-
+                    cursor:$c;
                     margin-bottom: -3%;
                     @include flex;
                     transition: 0.3s ease;
@@ -1693,6 +1922,7 @@ article {
             height: 10px;
             border-radius: 50%;
             background-color: #ddd;
+            cursor: $c;
 
          
         }
@@ -1719,18 +1949,44 @@ article {
         width: 100%;
         @include flex2;
         margin-bottom: 3%;
+    
+        cursor: $c;
+        p{
+            transition:.3s ease;
+            &:hover{
+                color:#9f7e58;
+            }
+        }
     }
 
     #prev2 {
         width: 50px;
         height: 50px;
-        background-color: aqua;
+        background-color: white;
+        border:1px solid #ddd;
+        font-size: 30px;
+        @include flex;
+        transition:.3s ease;
+        cursor: $c;
+        &:hover{
+            background-color: #333;
+            color:white;
+        }
     }
 
     #next2 {
         width: 50px;
         height: 50px;
-        background-color: aqua;
+        cursor: $c;
+        background-color: white;
+        border:1px solid #ddd;
+        font-size: 30px;
+        transition:.3s ease;
+        @include flex;
+        &:hover{
+            background-color: #333;
+            color:white;
+        }
     }
 
     .favo_box {
@@ -1879,7 +2135,7 @@ footer {
             .f_icon {
                 width: 20px;
                 height: 20px;
-          
+                cursor:$c;
             }
 
             img{
@@ -1923,6 +2179,10 @@ footer {
      
     }
 
+}
+
+.click{
+    color:#9f7e58;
 }
 
 .sb_c {
