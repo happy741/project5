@@ -1,0 +1,516 @@
+@charset "UTF-8";
+@import "font.css";
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @content;
+}
+
+@mixin flex2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @content;
+}
+
+@mixin flex3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @content;
+}
+
+@mixin flex4($flex, $justify, $align, $direction...) {
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction
+}
+
+@mixin bg {
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin border {
+    border: {
+        bottom: $border;
+        right: $border;
+        left: $border2;
+        top: $border2;
+    }
+}
+
+@mixin border2 {
+    border: {
+        top: $border;
+        left: $border;
+
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+$w: 1300px;
+$m: 0 auto;
+$m2: 5% auto;
+$h: 100%;
+$c: pointer;
+$f: 'NanumSquareRound';
+
+header {
+    width: 100%;
+    margin: $m;
+    height: 122px;
+
+}
+
+
+#nav1_box {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+#nav1 {
+    width: $w;
+    height: 40px;
+    margin: $m;
+    @include flex2;
+    background-color: white;
+
+
+    #help {
+        width: 400px;
+        height: $h;
+
+        @include flex2;
+    }
+
+    .help1 {
+        width: 190px;
+        height: $h;
+        @include flex;
+        transition:.3s ease;
+        
+        &:hover{
+            color:#9f7e58;
+        }
+    }
+
+    #my {
+        width: 170px;
+        height: $h;
+
+        @include flex2;
+
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+
+        @include flex;
+
+
+    }
+
+    cursor: $c;
+
+}
+
+#nav2_box {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    ;
+}
+
+
+#nav2 {
+    width: $w;
+    height: 80px;
+    margin: $m;
+    @include flex3;
+    background-color: white;
+
+
+
+    .logo {
+        width: 250px;
+        height: 60px;
+
+
+        img {
+            width: 100%;
+            height: $h;
+        }
+    }
+
+    ul {
+        width: 600px;
+        height: $h;
+        @include flex3;
+        
+        li{
+           
+
+            a{
+                transition:.3s ease;
+                &:hover{
+                    color:#9f7e58;
+                }
+            }
+          
+        }
+
+    }
+
+    #search {
+        width: 300px;
+        height: 40px;
+        background-color: #f6f5f3;
+        @include flex3;
+
+        #search_icon {
+            width: 8%;
+            height: 20px;
+            cursor: $c;
+            @include flex;
+
+        }
+
+
+        input {
+            width: 75%;
+            height: 25px;
+            font-size: 17px;
+            border: none;
+            background-color: #f6f5f3;
+        }
+    }
+}
+
+.sub_nav{
+    width:100%;
+    height:80px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sub_text{
+    width:$w;
+    height: $h;
+    margin:$m;
+    @include flex3;
+}
+.buy{width:100%;
+    height:675px;
+}
+.buy_box{
+    width:$w;
+    margin:$m;
+    height:675px;
+    border-bottom:1px solid #ddd;
+    @include flex;
+}
+.buy_book{
+    width:50%;
+    height:$h;
+    @include flex{
+        flex-direction: column;
+    };
+}
+.book_img{
+    width:300px;
+    height:452px;
+    background-color: antiquewhite;
+
+    img{
+        width:100%;
+        height:100%;
+    }
+}
+.book_button_box{
+    width:100px;
+    height:50px;
+    background-color: aliceblue;
+    @include flex3;
+}
+.book_button{
+    width:20px;
+    height:20px;
+    background-color: blueviolet;
+}
+
+.buy_book2{
+    width:50%;
+    height:$h;
+ 
+}
+.buy_text1{
+    width:100%;
+    height:350px;
+    background-color: cadetblue;
+    display:  flex;
+    flex-direction: column;
+
+    h1{
+        margin-top:10%;
+    }
+
+    h2{margin:1% 0;}
+    span{display: inline-block;
+        margin: {
+            top:1%;
+            bottom:3%;
+        }
+    }
+
+}
+
+.text2{
+width:100%;
+height:40px;
+background-color: aliceblue;
+}
+
+.option_box{
+    width:80%;
+    @include flex3;
+}
+
+.option{
+    width:25%;
+    height:60px;
+    border-bottom: 1px solid #ddd;
+    p{
+    &:first-child{
+        margin-bottom: 3%;
+        font-size: 18px;
+    }
+  
+}
+}
+
+
+.book_in{
+    width:100%;
+    height:250px;
+
+    margin-bottom:1px solid #ddd;
+ 
+}
+.book_in2{
+    width:100%;
+    height:150px;
+    background-color: brown;
+}
+.buy_button_box{
+    width:60%;
+    height:100px;
+    background-color: #ddd;
+    @include flex3;
+}
+
+.num{
+    width:100px;
+    height:60px;
+    background-color: darkolivegreen;
+}
+.buy_button{
+    width:220px;
+    height:60px;
+    background-color: chartreuse;
+    @include flex;
+}
+.add{width:100%;
+height:60px;
+
+}
+
+.add_box{
+    width:50%;
+    height:$h;
+    @include flex3;
+
+    margin-left:2%
+}
+
+#menu{
+    width:100%;
+    height:5000px;
+}
+
+.menu_box{
+    width:$w;
+    height:60px;
+
+
+    ul{
+        @include flex;
+        border: {
+            top:1px solid #ddd;
+            bottom:1px solid #ddd;
+        }
+        li{
+            width:100px;
+            height:60px;
+            @include flex;
+        }
+    }
+    
+}
+
+
+
+
+
+.menu_re{
+    width:$w;
+    height:210px;
+    margin: $m;
+    @include flex;
+}
+
+.custom{
+    width:50%;
+    height:210px;
+    background-color: cadetblue;
+
+   p{
+    font-size: 18px;
+    font-weight: 900;
+   }
+}
+
+.number{
+    font-size: 50px;
+    font-weight: 800;
+}
+.number2{
+    
+}
+
+.custom2{
+    width:50%;
+    height:210px;
+    background-color: rgb(111, 129, 129);
+}
+
+
+
+
+footer {
+    width: 100%;
+    height: 493px;
+    border-top:1px solid #ddd;
+    margin: $m;
+    @include flex;
+
+    .f1 {
+        width: 270px;
+        height: 350px;
+        margin-top:-5%;
+
+        .logo {
+            width: 200px;
+            height: 50px;
+
+            margin: 10% 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        p {
+
+            &:nth-of-type(2) {
+                margin: {
+                    top: 2%;
+                    bottom: 7%;
+                }
+            }
+
+            &:nth-of-type(4) {
+                margin: {
+                    top: 2%;
+                    bottom: 5%;
+                }
+            }
+        }
+
+
+        .f1_icon {
+            width: 200px;
+            height: 50px;
+            @include flex2;
+
+            .f_icon {
+                width: 20px;
+                height: 20px;
+                cursor:$c;
+            }
+
+            img{
+                width:100%;
+                height:100%;
+                filter:brightness(20%);
+                transition:.3s ease;
+
+                &:hover{
+                    filter:brightness(100%);
+                }
+            }
+        }
+    }
+
+    .f2{
+        width: 160px;
+        height: 350px;
+        margin:1%;
+
+        p{
+            font-size: 18px;
+            margin-bottom:10%;
+            font-weight: 600;
+        }
+    }
+
+  
+    ul{
+      
+        font: {
+            size:15px;
+            weight: 1px;
+        }
+
+        li{
+            line-height: 2.5;
+           
+
+            a{
+                transition:0.3s ease;
+            &:hover{
+                color:#f75454;
+                margin-left:10px;
+            }
+        }
+        }
+     
+    }
+
+}

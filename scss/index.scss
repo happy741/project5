@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import 'font.css';
+
 * {
     margin: 0;
     padding: 0;
@@ -167,10 +169,15 @@ header {
         @include flex3;
         
         li{
-            transition:.3s ease;
-            &:hover{
-                color:#9f7e58;
+           
+
+            a{
+                transition:.3s ease;
+                &:hover{
+                    color:#9f7e58;
+                }
             }
+          
         }
 
     }
@@ -265,6 +272,11 @@ header {
                 color: #fff;
                 @include flex;
                 margin-top: 5%;
+                transition:.3s ease;
+                cursor: $c;
+                &:hover{
+                    background-color: #333;
+                }
 
             }
 
@@ -312,6 +324,8 @@ header {
                 position: relative;
 
                 img {
+
+                 
                     &:nth-child(2) {
                         position: absolute;
                         top: 50px;
@@ -325,11 +339,12 @@ header {
 
             &:nth-of-type(3) {
                 position: relative;
-
+                h1,p{ margin-left:20%;}
                 img {
                     &:nth-child(1) {
                         position: absolute;
                         z-index: 5;
+                        left:50%;
                     }
 
                     &:nth-child(2) {
@@ -692,7 +707,7 @@ article {
     .art2 {
         width: 30%;
         height: 40px;
-
+        cursor:$c;
         @include flex
     }
 
@@ -838,7 +853,7 @@ article {
 }
 
 .deal {
-    width: 1600px;
+    width: 100%;
     height: 634px;
     margin: 10% auto;
     background-color: #fff3e4;
@@ -925,22 +940,27 @@ article {
 
     &:first-of-type {
         .deal_book {
+            $con:contain !global;
+            $no:no-repeat !global;
             background-image: url(../img/book1.jpg.crdownload);
-            @include bg;
+            background-size: $con;
+            background-repeat: $no;
         }
     }
 
     &:nth-child(2) {
         .deal_book {
             background-image: url(../img/book2.jpg);
-            @include bg;
+            background-size: $con;
+            background-repeat: $no;
         }
     }
 
     &:nth-child(3) {
         .deal_book {
             background-image: url(../img/book3.jpg);
-            @include bg;
+            background-size: $con;
+            background-repeat: $no;
         }
     }
 
@@ -948,7 +968,8 @@ article {
     &:nth-child(4) {
         .deal_book {
             background-image: url(../img/book4.jpg);
-            @include bg;
+            background-size: $con;
+            background-repeat: $no;
         }
     }
 
@@ -956,7 +977,8 @@ article {
     &:nth-child(5) {
         .deal_book {
             background-image: url(../img/book5.jpg);
-            @include bg;
+            background-size: $con;
+            background-repeat: $no;
         }
     }
 
@@ -964,14 +986,15 @@ article {
     &:nth-child(6) {
         .deal_book {
             background-image: url(../img/book6.jpg.crdownload);
-            @include bg;
+            background-size: $con;
+            background-repeat: $no;
         }
     }
 
 
 
     .deal_book {
-        width: 250px;
+        width: 220px;
         height: 267px;
 
         margin: {
@@ -1102,6 +1125,19 @@ article {
     .new_book_box2 {
         width: 100%;
         height: 750px;
+
+        .new_img{
+            width:200px;
+            height:300px;
+            margin: {
+                bottom:5%;
+                right: 27%;
+            }
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
         
         @include flex {
             flex-wrap: wrap;
@@ -1148,6 +1184,11 @@ article {
                     @include flex;
                     color: #fff;
                     margin-top: 8%;
+                    cursor: $c;
+                    transition:.3s ease;
+                    &:hover{
+                        background-color: #333;
+                    }
                 }
             }
 
@@ -1278,6 +1319,20 @@ article {
     .new_book_box3 {
         width: 100%;
         height: 750px;
+
+        .new_img{
+            width:200px;
+            height:300px;
+            margin: {
+                bottom:5%;
+                right: 27%;
+            }
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+
         
         @include flex {
             flex-wrap: wrap;
@@ -1325,6 +1380,11 @@ article {
                     @include flex;
                     color: #fff;
                     margin-top: 8%;
+                    cursor: $c;
+                    transition:.3s ease;
+                    &:hover{
+                        background-color: #333;
+                    }
                 }
             }
 
@@ -1458,6 +1518,20 @@ article {
     .new_book_box4 {
         width: 100%;
         height: 750px;
+
+        .new_img{
+            width:200px;
+            height:300px;
+            margin: {
+                bottom:5%;
+                right: 27%;
+            }
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+        
         
         @include flex {
             flex-wrap: wrap;
@@ -1505,6 +1579,12 @@ article {
                     @include flex;
                     color: #fff;
                     margin-top: 8%;
+                    cursor: $c;
+
+                    transition:.3s ease;
+                    &:hover{
+                        background-color: #333;
+                    }
                 }
             }
 
@@ -1689,6 +1769,11 @@ article {
                     @include flex;
                     color: #fff;
                     margin-top: 8%;
+                    cursor: $c;
+                    transition:.3s ease;
+                    &:hover{
+                        background-color: #333;
+                    }
                 }
             }
 
@@ -2155,14 +2240,17 @@ footer {
         width: 160px;
         height: 350px;
         margin:1%;
+
+        p{
+            font-size: 18px;
+            margin-bottom:10%;
+            font-weight: 600;
+        }
     }
 
   
     ul{
-        h3{
-            font-size: 18px;
-            margin-bottom:10%;
-        }
+      
         font: {
             size:15px;
             weight: 1px;
@@ -2170,11 +2258,15 @@ footer {
 
         li{
             line-height: 2.5;
-            transition:0.3s ease;
+           
+
+            a{
+                transition:0.3s ease;
             &:hover{
                 color:#f75454;
-                transform: translateX(10px);
+                margin-left:10px;
             }
+        }
         }
      
     }
@@ -2217,17 +2309,17 @@ footer {
 
 @keyframes slide3 {
     0% {
-        right: 700px;
+        right: 600px;
         opacity: 0;
     }
 
     3% {
-        right: 700px;
+        right: 600px;
         opacity: 1;
     }
 
     100% {
-        right: 300px;
+        right: 0px;
         opacity: 0;
     }
 }
@@ -2272,11 +2364,3 @@ footer {
 
 
 
-
-// @mixin flex4($flex,$justify,$align,$direction...)
-// {
-//     display: $flex;
-//     justify-content:$justify;
-//     align-items: $align;
-//     flex-direction:$direction
-// }
