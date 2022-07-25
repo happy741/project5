@@ -104,30 +104,30 @@
                 <div class="buy_text1">
                     <h1>천년 여우 여우비</h1>
                     <div class="text2">
-                       <img src="sub_img/premium-icon-star-4369505.png" alt="#">
-                       <img src="sub_img/premium-icon-star-4369505.png" alt="#">
-                       <img src="sub_img/premium-icon-star-4369505.png" alt="#">
-                       <img src="sub_img/premium-icon-star-4369505.png" alt="#">
-                       <img src="sub_img/premium-icon-star-5708819.png" alt="#">
-                       <span>(3,714)</span>  <span>By(하은경)</span>
+                        <img src="sub_img/premium-icon-star-4369505.png" alt="#">
+                        <img src="sub_img/premium-icon-star-4369505.png" alt="#">
+                        <img src="sub_img/premium-icon-star-4369505.png" alt="#">
+                        <img src="sub_img/premium-icon-star-4369505.png" alt="#">
+                        <img src="sub_img/premium-icon-star-5708819.png" alt="#">
+                        <span>(3,714)</span> <span>By(하은경)</span>
                     </div>
 
-                    <h2>&#92;7200-&#92;8800</h2>
+                    <h2>&#92;7200 - &#92;8800</h2>
                     <div class="span_box">
                         <span>Book Format:</span> <span>choose an option</span>
                     </div>
                     <div class="option_box">
-                        <div class="option">
-                            <p>Hardcover</p>
-                            <p>&#92;7200</p>
-                        </div>
-
-                        <div class="option">
+                        <div class="option option_border" onclick="ch(this)">
                             <p>Paperback</p>
                             <p>&#92;7000</p>
                         </div>
 
-                        <div class="option">
+                        <div class="option" onclick="ch(this)">
+                            <p>Hardcover</p>
+                            <p>&#92;7200</p>
+                        </div>
+
+                        <div class="option" onclick="ch(this)">
                             <p>Kindle</p>
                             <p>&#92;8800</p>
                         </div>
@@ -146,6 +146,9 @@
                         </div>
                         <div class="buy_button">Add to cart</div>
                     </div>
+                </div>
+                <div class="sum"><span>금액</span>
+                <div class="sum2"></div>
                 </div>
 
                 <div class="add">
@@ -325,16 +328,31 @@
 
 
     <div class="re_input">
-        <h4>Write a Review</h4>
-        <span>평점</span>
-
+        <div class="input_box">
+            <h4>Write a Review</h4>
+            <span>평점</span>
+            <div class="star_box">
+                <img src="sub_img/premium-icon-star-5708819.png" alt="#">
+                <img src="sub_img/premium-icon-star-5708819.png" alt="#">
+                <img src="sub_img/premium-icon-star-5708819.png" alt="#">
+                <img src="sub_img/premium-icon-star-5708819.png" alt="#">
+                <img src="sub_img/premium-icon-star-5708819.png" alt="#">
+            </div>
+            <div class="star_box2">
+                <img src="sub_img/premium-icon-star-4369505.png" alt="#">
+                <img src="sub_img/premium-icon-star-4369505.png" alt="#">
+                <img src="sub_img/premium-icon-star-4369505.png" alt="#">
+                <img src="sub_img/premium-icon-star-4369505.png" alt="#">
+                <img src="sub_img/premium-icon-star-4369505.png" alt="#">
+            </div>
+        </div>
         <p>한줄평</p>
         <textarea name="re" id="" cols="30" rows="10"></textarea>
         <div class="input_button">등록</div>
-
-
-
-
+    
+    
+    
+    
     </div>
     <div class="menu_box" id="33">
         <ul>
@@ -551,26 +569,90 @@
                 $('.book_in2').html(data);
             })
 
-            $('.option').click(function(){
+            $('.option').click(function () {
                 $('.option').removeClass('option_border');
                 $(this).addClass('option_border');
             });
+
             
-            $('#plus').click(function(){
-                $('.price').val(parseInt($('.price').val())+1);
+    
+            var sum=7000;
+
+            $('.option').eq(0).click(function () {
+                sum=7000;
+                $('.sum2 > span').text("7,000원");
+            
+            });
+            $('.option').eq(1).click(function () {
+                sum=7200;
+              $('.sum2 > span').text("7,200원");
+            
+            });
+             $('.option').eq(2).click(function () {
+                sum=8800;
+                $('.sum2 > span').text("8,800원");
+            
+            });
+            // function ch(item){
+            //         var sum5=$(item).text();
+            //         sum=sum5;
+            //     }
+     
+
+            $(".sum2").append("<span>" + sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원 </span>");
+           
+           
+
+            $('#plus').click(function () {
+                
+                $('.price').val(parseInt($('.price').val()) + 1);
+                var sum2=parseInt($('.price').val()*sum);
+                $(".sum2").html("<span>" + sum2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원</span>");
             });
 
-            var pr=$('.price').val();
+            var pr = $('.price').val();
 
-            $('#mi').click(function(){
-                $('.price').val(parseInt($('.price').val())-1);
+            $('#mi').click(function () {
+                $('.price').val(parseInt($('.price').val()) - 1);
+                var sum2=parseInt($('.price').val()*sum);
+                $(".sum2").html("<span>" + sum2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원</span>");
                 if ($(".price").val() < 1) {
 
-alert("1권 이상 구매해야합니다.");
-$('.price').val(1);
+                    alert("1권 이상 구매해야합니다.");
+                    $('.price').val(1);
                 }
-                
+
             });
+
+            $(".price").keyup(function () {
+
+ if ($(".price").val() < 1) {
+
+alert("1권 이상 구매가 가능합니다.");
+
+$(".price").val(1);
+
+} else if (isNaN($(".price").val())) {
+
+alert("숫자를 입력하세요.") 
+
+$(".price").val(1);
+
+} else if (($(".price").val() * 10) % 10 != 0) {
+
+alert("정수를 입력하세요");
+
+$(".price").val(1);
+
+} 
+
+var sum4 = parseInt($(".price").val() * sum );
+
+$(".sum2").html("<span>"+ sum4.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원 </span>");
+
+});
+
+            
 
         });
 
@@ -608,8 +690,53 @@ $('.price').val(1);
 
                 }
 
-            });
+                // $('.star_box > img').eq(0).hover(function(){
+                //     $(this).attr('src','./sub_img/premium-icon-star-4369505.png');
+                // },function(){
+                //     $(this).attr('src','./sub_img/premium-icon-star-5708819.png');
 
+                // });
+
+                // $('.star_box > img').eq(1).hover(function(){
+                //     $('.star_box > img').eq(2).prevAll('img').attr('src','./sub_img/premium-icon-star-4369505.png');
+                // },function(){
+                //     $('.star_box > img').prevAll('img').attr('src','./sub_img/premium-icon-star-5708819.png');
+
+                // });
+
+                // $('.star_box > img').eq(2).hover(function(){
+                //     $('.star_box > img').eq(3).prevAll('img').attr('src','./sub_img/premium-icon-star-4369505.png');
+                // },function(){
+                //     $('.star_box > img').prevAll('img').attr('src','./sub_img/premium-icon-star-5708819.png');
+
+                // });
+
+                // $('.star_box > img').eq(3).hover(function(){
+                //     $('.star_box > img').eq(4).prevAll('img').attr('src','./sub_img/premium-icon-star-4369505.png');
+                // },function(){
+                //     $('.star_box > img').prevAll('img').attr('src','./sub_img/premium-icon-star-5708819.png');
+
+                // });
+
+                // $('.star_box > img').eq(4).hover(function(){
+                //     $('.star_box > img').attr('src','./sub_img/premium-icon-star-4369505.png');
+                // },function(){
+                //     $('.star_box > img').attr('src','./sub_img/premium-icon-star-5708819.png');
+
+                    $('.star_box > img').click(function(){
+                        $('.star_box > img').attr('src','./sub_img/premium-icon-star-5708819.png');
+                        $(this).prevUntil().attr('src','./sub_img/premium-icon-star-4369505.png');
+                    });
+
+                // });
+
+                $('.star_box > img').eq(i).hover(function(){
+                    for(var i=0; i<$('.star_box >img').length; i++);
+                    $('.star_box > img').eq(i).attr('src','./sub_img/premium-icon-star-4369505.png');
+                },function(){
+                    $('.star_box > img').eq(i).attr('src','./sub_img/premium-icon-star-5708819.png');
+                });
+  });
     </script>
 
 </body>
