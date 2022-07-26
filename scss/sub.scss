@@ -342,7 +342,7 @@ header {
     width: 100%;
     height: 250px;
 
-    margin-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 
 }
 
@@ -395,6 +395,9 @@ header {
     @include flex;
     cursor: $c;
     color:white;
+    &:hover{
+        animation:jelly .5s ease;
+    }
 }
 
 .add {
@@ -403,12 +406,24 @@ header {
 
 }
 
+.add_img{
+    width:30px;
+
+}
+
 .add_box {
     width: 50%;
     height: $h;
-    @include flex3;
+    @include flex4(flex,flex-start,center,row);
 
     margin-left: 2%
+}
+
+.add_box1{
+    margin-right:10%;
+ 
+    height:$h;
+    @include flex;
 }
 
 #menu {
@@ -491,20 +506,30 @@ header {
 .re_box1 {
     width: 170px;
     height: 50px;
-    background-color: aliceblue;
+    cursor: $c;
     @include flex;
+    border:1px solid #333;
+    &:hover{
+        animation:jelly .5s ease;
+    }
 }
 
 .re_box_box {
     width: 68%;
     @include flex2;
+
 }
 
 .re_box2 {
     width: 170px;
     height: 50px;
-    background-color: rgb(85, 96, 105);
+    background-color: #333;
+    color:white;
+    cursor: $c;
     @include flex4(flex, center, center, row);
+    &:hover{
+        animation:jelly .5s ease;
+    }
 }
 
 .number {
@@ -677,6 +702,9 @@ header {
     @include flex;
     color: white;
     margin-top:2%;
+    &:hover{
+        animation:jelly .5s ease;
+    }
 }
 
 .input_box{
@@ -805,12 +833,13 @@ header {
 }
 
 .al_text{
-    width:80%;
+    width:83%;
     height:100px;
     background-color:  white;
     position:absolute;
-    bottom:14px;
+    bottom:4px;
     transition:.3s ease;
+    z-index: 999;
     @include flex4(flex,space-around, flex-start, column);
     h3{
         font-size: 14px;
@@ -832,6 +861,27 @@ header {
     @include flex4(flex,space-around , flex-end,row);
     font-size: 14px;
     cursor: $c;
+ 
+    p{
+        position:relative;
+     
+        &:hover::after{
+            width:100px;
+        }
+    }
+
+
+    p::after{
+        content:'';
+        width:0;
+        height:1px;
+        background-color: #333;
+        position:absolute;
+        left:-5px;
+        bottom:-5px;
+        transition:.3s ease;
+      
+    }
 
 }
 .icon{
@@ -841,6 +891,7 @@ header {
     border-radius: 50%;
     @include flex;
     transition:.3s ease;
+    margin-bottom:-2%;
     img{
         width:70%;
         height:70%;
@@ -934,7 +985,7 @@ footer {
 
         font: {
             size: 15px;
-            weight: 1px;
+
         }
 
         li {
@@ -953,5 +1004,21 @@ footer {
 
     }
 
+}
+
+@keyframes jelly {
+    0%,
+    100% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+    75% {
+      transform: scale(0.95, 1.05);
+    }
 }
 

@@ -252,7 +252,7 @@ header {
 .book_in {
   width: 100%;
   height: 250px;
-  margin-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .book_in2 {
@@ -311,19 +311,36 @@ header {
   cursor: pointer;
   color: white;
 }
+.buy_button:hover {
+  -webkit-animation: jelly 0.5s ease;
+          animation: jelly 0.5s ease;
+}
 
 .add {
   width: 100%;
   height: 60px;
 }
 
+.add_img {
+  width: 30px;
+}
+
 .add_box {
   width: 50%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
   margin-left: 2%;
+}
+
+.add_box1 {
+  margin-right: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #menu {
@@ -398,10 +415,15 @@ header {
 .re_box1 {
   width: 170px;
   height: 50px;
-  background-color: aliceblue;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #333;
+}
+.re_box1:hover {
+  -webkit-animation: jelly 0.5s ease;
+          animation: jelly 0.5s ease;
 }
 
 .re_box_box {
@@ -414,11 +436,17 @@ header {
 .re_box2 {
   width: 170px;
   height: 50px;
-  background-color: rgb(85, 96, 105);
+  background-color: #333;
+  color: white;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+.re_box2:hover {
+  -webkit-animation: jelly 0.5s ease;
+          animation: jelly 0.5s ease;
 }
 
 .number {
@@ -556,6 +584,10 @@ header {
   color: white;
   margin-top: 2%;
 }
+.input_button:hover {
+  -webkit-animation: jelly 0.5s ease;
+          animation: jelly 0.5s ease;
+}
 
 .input_box {
   position: relative;
@@ -677,12 +709,13 @@ header {
 }
 
 .al_text {
-  width: 80%;
+  width: 83%;
   height: 100px;
   background-color: white;
   position: absolute;
-  bottom: 14px;
+  bottom: 4px;
   transition: 0.3s ease;
+  z-index: 999;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -710,6 +743,22 @@ header {
   font-size: 14px;
   cursor: pointer;
 }
+.al_text2 p {
+  position: relative;
+}
+.al_text2 p:hover::after {
+  width: 100px;
+}
+.al_text2 p::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #333;
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
 
 .icon {
   width: 30px;
@@ -720,6 +769,7 @@ header {
   justify-content: center;
   align-items: center;
   transition: 0.3s ease;
+  margin-bottom: -2%;
 }
 .icon img {
   width: 70%;
@@ -793,7 +843,6 @@ footer .f2 p {
 }
 footer ul {
   font-size: 15px;
-  font-weight: 1px;
 }
 footer ul li {
   line-height: 2.5;
@@ -804,4 +853,34 @@ footer ul li a {
 footer ul li a:hover {
   color: #f75454;
   margin-left: 10px;
+}
+
+@-webkit-keyframes jelly {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+@keyframes jelly {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
 }

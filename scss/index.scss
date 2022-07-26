@@ -124,11 +124,21 @@ header {
     }
 
     .icon {
-        width: 30px;
-        height: 30px;
-
+        width:30px;
+        height:30px;
+        cursor: $c;
+        border-radius: 50%;
         @include flex;
-
+        transition:.3s ease;
+        margin-bottom:-2%;
+        img{
+            width:70%;
+            height:70%;
+        }
+    
+        &:hover{
+            background-color: #f75454;
+        }
 
     }
 
@@ -275,7 +285,7 @@ header {
                 transition:.3s ease;
                 cursor: $c;
                 &:hover{
-                    background-color: #333;
+                    animation:jelly .5s ease;
                 }
 
             }
@@ -607,7 +617,7 @@ header {
             position: absolute;
             bottom: 0;
             transition: 0.3s ease;
-
+            z-index: 999;
             @include flex {
                 flex-direction: column;
             }
@@ -648,13 +658,34 @@ header {
             width: 100%;
             height: 25%;
             margin-bottom: 5%;
-            @include flex4(flex, space-around, flex-end, row);
+            @include flex4(flex, space-evenly, flex-end, row);
             cursor:$c;
             .icon2_box {
-                width: 70px;
+                width: 83px;
 
 
                 @include flex3;
+            }
+
+            p{
+                position:relative;
+             
+                &:hover::after{
+                    width:105px;
+                }
+            }
+        
+        
+            p::after{
+                content:'';
+                width:0;
+                height:1px;
+                background-color: #333;
+                position:absolute;
+                left:-1px;
+                bottom:-5px;
+                transition:.3s ease;
+              
             }
 
             .icon2 {
@@ -663,9 +694,9 @@ header {
                 @include flex;
                 border-radius: 50%;
                 transition: 0.3s ease;
-                margin-bottom: -6%;
+                margin-bottom: -7%;
                 cursor: $c;
-
+              
                 img {
                     width: 65%;
                 }
@@ -784,6 +815,60 @@ article {
         @include flex4(flex, space-around, flex-end, row);
         cursor:$c;
 
+
+        .art_add{
+            width: 30px;
+                height: 30px;
+            position:relative;
+                margin-bottom:-5%;
+                img {
+                    width: 65%;
+                }
+
+                &:hover::after{
+                   transform: scaleY(1)
+                    
+                }
+                &:hover::before{
+                    transform: scale(1);
+                     
+                 }
+        }
+
+        .art_add::after{
+            content:'ADD TO CART';
+            transition:.3s ease;
+            width:120px;
+            height:30px;
+            bottom: #333;
+            position:absolute;
+            background-color: #333;
+            color:white;
+            font-size: 12px;
+            @include flex;
+            border-radius: 10px;
+            top:-4px;
+            right:-120px;
+            transform: scaleY(0);
+        }
+
+        .art_add::before{
+            content: '';
+            width:0;
+            height:0;
+            transition:.3s ease;
+            border: {
+                top:8px solid transparent;
+                right: 10px solid #333;
+                bottom:8px solid transparent;
+
+            };
+            position:absolute;
+            right:-2px;
+            top:3px;
+            transform: scaleY(0);
+        }
+
         .icon3_box {
             width: 70px;
             height: 20px;
@@ -809,11 +894,13 @@ article {
         }
     }
 
+
+
     .art1_text {
         width: 100%;
         height: 150px;
         background-color: white;
-
+        z-index: 999;
         position: absolute;
         bottom: 0;
         transition: 0.3s ease;
@@ -1187,7 +1274,7 @@ article {
                     cursor: $c;
                     transition:.3s ease;
                     &:hover{
-                        background-color: #333;
+                        animation:jelly .5s ease;
                     }
                 }
             }
@@ -1289,11 +1376,11 @@ article {
                     @include flex;
                     transition: 0.3s ease;
 
-                    
-
-                    img {
-                        width: 65%;
+                    img{
+                        width:70%;
+                        height:70%;
                     }
+                
 
                     &:hover {
                         background-color: #f75454;
@@ -1383,7 +1470,7 @@ article {
                     cursor: $c;
                     transition:.3s ease;
                     &:hover{
-                        background-color: #333;
+                        animation:jelly .5s ease;
                     }
                 }
             }
@@ -1489,7 +1576,8 @@ article {
                     transition: 0.3s ease;
 
                     img {
-                        width: 65%;
+                        width: 70%;
+                        height:70%;
                     }
 
                     &:hover {
@@ -1583,7 +1671,7 @@ article {
 
                     transition:.3s ease;
                     &:hover{
-                        background-color: #333;
+                        animation:jelly .5s ease;
                     }
                 }
             }
@@ -1689,7 +1777,8 @@ article {
                     transition: 0.3s ease;
 
                     img {
-                        width: 65%;
+                        width: 70%;
+                        height:70%;
                     }
 
                     &:hover {
@@ -1772,7 +1861,7 @@ article {
                     cursor: $c;
                     transition:.3s ease;
                     &:hover{
-                        background-color: #333;
+                        animation:jelly .5s ease;
                     }
                 }
             }
@@ -1875,7 +1964,8 @@ article {
                     transition: 0.3s ease;
 
                     img {
-                        width: 65%;
+                        width: 70%;
+                        height:70%;
                     }
 
                     &:hover {
@@ -2130,7 +2220,10 @@ article {
                 &:nth-of-type(5) {
                     .favo_img {
                         background-image: url(../img/f2\ \(1\).png);
-                        @include bg;
+                        background: {
+                            position:50, 50%;
+                            size:cover;
+                           };
                     }
                 }
 
@@ -2144,14 +2237,21 @@ article {
                 &:nth-of-type(7) {
                     .favo_img {
                         background-image: url(../img/f4.jpg);
-                        @include bg;
+                        
+                       background: {
+                        position:right 50% top 40%;
+                        size:cover;
+                       };
                     }
                 }
 
                 &:nth-of-type(8) {
                     .favo_img {
-                        background-image: url(../img/f5.jpg.crdownload);
-                        @include bg;
+                        background-image: url(../img/f5.jpg);
+                       background: {
+                        position:50, 50%;
+                        size:cover;
+                       };
                     }
                 }
             }
@@ -2361,6 +2461,21 @@ footer {
     }
 }
 
+@keyframes jelly {
+    0%,
+    100% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+}
 
 
 

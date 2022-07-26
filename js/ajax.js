@@ -133,7 +133,7 @@ $.ajax({
         for (var i = 0; i < book4.length; i++) {
 
 
-            $(".new_book3").eq(i).append('<a href="#">' + "<img src='" + msg4.documents[i].thumbnail + "'>" + "</a>");
+            $(".new_book_box").find(".new_book3").eq(i).append('<a href="#">' + "<img src='" + msg4.documents[i].thumbnail + "'>" + "</a>");
             var sale_price5 = Math.floor(msg4.documents[i].sale_price);
             var price6 = Math.ceil(sale_price5 / 100) * 100;
 

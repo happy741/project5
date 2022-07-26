@@ -62,9 +62,20 @@ header {
 #nav1 .icon {
   width: 30px;
   height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s ease;
+  margin-bottom: -2%;
+}
+#nav1 .icon img {
+  width: 70%;
+  height: 70%;
+}
+#nav1 .icon:hover {
+  background-color: #f75454;
 }
 
 #nav2_box {
@@ -189,7 +200,8 @@ header {
   cursor: pointer;
 }
 .main_slide .slide_box .slide .slide1_button:hover {
-  background-color: #333;
+  -webkit-animation: jelly 0.5s ease;
+          animation: jelly 0.5s ease;
 }
 .main_slide .slide_box .slide:nth-child(1) img {
   width: 80%;
@@ -423,6 +435,7 @@ header {
   position: absolute;
   bottom: 0;
   transition: 0.3s ease;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -457,16 +470,32 @@ header {
   height: 25%;
   margin-bottom: 5%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: flex-end;
   flex-direction: row;
   cursor: pointer;
 }
 .books1 #book_box .books_text2 .icon2_box {
-  width: 70px;
+  width: 83px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.books1 #book_box .books_text2 p {
+  position: relative;
+}
+.books1 #book_box .books_text2 p:hover::after {
+  width: 105px;
+}
+.books1 #book_box .books_text2 p::after {
+  content: "";
+  width: 0;
+  height: 1px;
+  background-color: #333;
+  position: absolute;
+  left: -1px;
+  bottom: -5px;
+  transition: 0.3s ease;
 }
 .books1 #book_box .books_text2 .icon2 {
   width: 35px;
@@ -476,7 +505,7 @@ header {
   align-items: center;
   border-radius: 50%;
   transition: 0.3s ease;
-  margin-bottom: -6%;
+  margin-bottom: -7%;
   cursor: pointer;
 }
 .books1 #book_box .books_text2 .icon2 img {
@@ -569,6 +598,52 @@ article h1 {
   flex-direction: row;
   cursor: pointer;
 }
+.art1 .art1_text2 .art_add {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-bottom: -5%;
+}
+.art1 .art1_text2 .art_add img {
+  width: 65%;
+}
+.art1 .art1_text2 .art_add:hover::after {
+  transform: scaleY(1);
+}
+.art1 .art1_text2 .art_add:hover::before {
+  transform: scale(1);
+}
+.art1 .art1_text2 .art_add::after {
+  content: "ADD TO CART";
+  transition: 0.3s ease;
+  width: 120px;
+  height: 30px;
+  bottom: #333;
+  position: absolute;
+  background-color: #333;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  top: -4px;
+  right: -120px;
+  transform: scaleY(0);
+}
+.art1 .art1_text2 .art_add::before {
+  content: "";
+  width: 0;
+  height: 0;
+  transition: 0.3s ease;
+  border-top: 8px solid transparent;
+  border-right: 10px solid #333;
+  border-bottom: 8px solid transparent;
+  position: absolute;
+  right: -2px;
+  top: 3px;
+  transform: scaleY(0);
+}
 .art1 .art1_text2 .icon3_box {
   width: 70px;
   height: 20px;
@@ -596,6 +671,7 @@ article h1 {
   width: 100%;
   height: 150px;
   background-color: white;
+  z-index: 999;
   position: absolute;
   bottom: 0;
   transition: 0.3s ease;
@@ -906,7 +982,8 @@ article h1 {
   transition: 0.3s ease;
 }
 .new .new_book_box2 .new_book1 .new_text2 .new_button:hover {
-  background-color: #333;
+  -webkit-animation: jelly 0.5s ease;
+          animation: jelly 0.5s ease;
 }
 .new .new_book_box2 .new_book2 {
   width: 16.81%;
@@ -996,7 +1073,8 @@ article h1 {
   transition: 0.3s ease;
 }
 .new .new_book_box2 .new_book2 .new_text4 .icon4 img {
-  width: 65%;
+  width: 70%;
+  height: 70%;
 }
 .new .new_book_box2 .new_book2 .new_text4 .icon4:hover {
   background-color: #f75454;
@@ -1069,7 +1147,8 @@ article h1 {
   transition: 0.3s ease;
 }
 .new .new_book_box3 .new_book1 .new_text2 .new_button:hover {
-  background-color: #333;
+  -webkit-animation: jelly 0.5s ease;
+          animation: jelly 0.5s ease;
 }
 .new .new_book_box3 .new_book2 {
   width: 16.81%;
@@ -1162,7 +1241,8 @@ article h1 {
   transition: 0.3s ease;
 }
 .new .new_book_box3 .new_book2 .new_text4 .icon4 img {
-  width: 65%;
+  width: 70%;
+  height: 70%;
 }
 .new .new_book_box3 .new_book2 .new_text4 .icon4:hover {
   background-color: #f75454;
@@ -1235,7 +1315,8 @@ article h1 {
   transition: 0.3s ease;
 }
 .new .new_book_box4 .new_book1 .new_text2 .new_button:hover {
-  background-color: #333;
+  -webkit-animation: jelly 0.5s ease;
+          animation: jelly 0.5s ease;
 }
 .new .new_book_box4 .new_book2 {
   width: 16.81%;
@@ -1328,7 +1409,8 @@ article h1 {
   transition: 0.3s ease;
 }
 .new .new_book_box4 .new_book2 .new_text4 .icon4 img {
-  width: 65%;
+  width: 70%;
+  height: 70%;
 }
 .new .new_book_box4 .new_book2 .new_text4 .icon4:hover {
   background-color: #f75454;
@@ -1390,7 +1472,8 @@ article h1 {
   transition: 0.3s ease;
 }
 .new .new_book_box .new_book1 .new_text2 .new_button:hover {
-  background-color: #333;
+  -webkit-animation: jelly 0.5s ease;
+          animation: jelly 0.5s ease;
 }
 .new .new_book_box .new_book2 {
   width: 16.81%;
@@ -1480,7 +1563,8 @@ article h1 {
   transition: 0.3s ease;
 }
 .new .new_book_box .new_book2 .new_text4 .icon4 img {
-  width: 65%;
+  width: 70%;
+  height: 70%;
 }
 .new .new_book_box .new_book2 .new_text4 .icon4:hover {
   background-color: #f75454;
@@ -1692,7 +1776,7 @@ article h1 {
 }
 .favorite .favo_box .favo_box_box .favo:nth-of-type(5) .favo_img {
   background-image: url(../img/f2\ \(1\).png);
-  background-position: center;
+  background-position: 50, 50%;
   background-size: cover;
 }
 .favorite .favo_box .favo_box_box .favo:nth-of-type(6) .favo_img {
@@ -1702,12 +1786,12 @@ article h1 {
 }
 .favorite .favo_box .favo_box_box .favo:nth-of-type(7) .favo_img {
   background-image: url(../img/f4.jpg);
-  background-position: center;
+  background-position: right 50% top 40%;
   background-size: cover;
 }
 .favorite .favo_box .favo_box_box .favo:nth-of-type(8) .favo_img {
-  background-image: url(../img/f5.jpg.crdownload);
-  background-position: center;
+  background-image: url(../img/f5.jpg);
+  background-position: 50, 50%;
   background-size: cover;
 }
 .favorite .favo_box .favo_img {
@@ -1921,5 +2005,33 @@ footer ul li a:hover {
     transform: scale(1) translate(-50%, -50%);
     top: 50%;
     left: 50%;
+  }
+}
+@-webkit-keyframes jelly {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+@keyframes jelly {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
   }
 }
