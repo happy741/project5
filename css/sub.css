@@ -380,7 +380,8 @@ header {
 .menu_re {
   width: 1300px;
   height: 210px;
-  margin: 3% auto;
+  margin-top: 3%;
+  margin-left: 23%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -513,6 +514,7 @@ header {
   width: 1055px;
   height: 1195px;
   margin: 0 auto;
+  margin-left: 30%;
 }
 .re_box h3 {
   margin: 5% 0;
@@ -559,6 +561,7 @@ header {
   width: 1055px;
   height: 400px;
   margin: 0 auto;
+  margin-left: 30%;
 }
 .re_input h4 {
   font-size: 18px;
@@ -605,10 +608,15 @@ header {
   display: none;
 }
 
+.scroll {
+  background-color: #ddd;
+}
+
 .del {
   width: 1300px;
   height: 800px;
   margin: 0 auto;
+  margin-left: 20%;
   display: flex;
   justify-content: center;
   align-items: center;

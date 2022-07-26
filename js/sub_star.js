@@ -49,12 +49,8 @@ $.ajax({
             $(this).prevUntil().attr('src', './sub_img/premium-icon-star-4369505.png');
         });
 
-        // });
 
-        $('.star_box > img').eq(i).hover(function () {
-            for (var i = 0; i < $('.star_box >img').length; i++);
-            $('.star_box > img').eq(i).attr('src', './sub_img/premium-icon-star-4369505.png');
-        }, function () {
-            $('.star_box > img').eq(i).attr('src', './sub_img/premium-icon-star-5708819.png');
-        });
+
+
+
     });
