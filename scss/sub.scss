@@ -470,11 +470,8 @@ header {
 .menu_re {
     width: $w;
     height: 210px;
-    margin: {
-        top:3%;
-        left:23%;
-    }
-    @include flex;
+    margin:3% auto;
+    @include flex4(flex, flex-end, center,row);
 }
 
 .custom {
@@ -618,10 +615,10 @@ header {
 }
 
 .re_box {
-    width: 1055px;
+    width: 768px;
     height: 1195px;
     margin: $m;
-    margin-left: 30%;
+
 
     h3 {
         margin: 5% 0;
@@ -629,7 +626,7 @@ header {
 }
 
 .box {
-    width: 100%;
+    width: 120%;
     height: 330px;
     margin-top: 5%;
     border-bottom: 1px solid #ddd;
@@ -679,10 +676,10 @@ header {
 }
 
 .re_input{
-    width:1055px;
+    width:747px;
     height:400px;
     margin:$m;
-    margin-left:30%;
+
     h4{
         font-size: 18px;
     }
@@ -734,7 +731,7 @@ header {
     width:$w;
     height:800px;
     margin: $m;
-    margin-left:20%;
+  
     @include flex;
     table{
         width:1000px;

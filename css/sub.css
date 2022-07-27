@@ -380,11 +380,11 @@ header {
 .menu_re {
   width: 1300px;
   height: 210px;
-  margin-top: 3%;
-  margin-left: 23%;
+  margin: 3% auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  flex-direction: row;
 }
 
 .custom {
@@ -511,17 +511,16 @@ header {
 }
 
 .re_box {
-  width: 1055px;
+  width: 768px;
   height: 1195px;
   margin: 0 auto;
-  margin-left: 30%;
 }
 .re_box h3 {
   margin: 5% 0;
 }
 
 .box {
-  width: 100%;
+  width: 120%;
   height: 330px;
   margin-top: 5%;
   border-bottom: 1px solid #ddd;
@@ -558,10 +557,9 @@ header {
 }
 
 .re_input {
-  width: 1055px;
+  width: 747px;
   height: 400px;
   margin: 0 auto;
-  margin-left: 30%;
 }
 .re_input h4 {
   font-size: 18px;
@@ -616,7 +614,6 @@ header {
   width: 1300px;
   height: 800px;
   margin: 0 auto;
-  margin-left: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
