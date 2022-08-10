@@ -29,6 +29,13 @@ $(function(){
 
     });
 
+
+
+
+
+
+    
+
     $('.art2').eq(0).click(function(){
         $('.art_box').fadeIn();
         $('.art_box2').hide();
